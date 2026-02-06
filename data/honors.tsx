@@ -1,13 +1,13 @@
 export const honors = [
   {
-    year: "2024",
+    year: "2025",
     title: "Technical Leadership Recognition",
-    organization: "Five Star Digital Media",
+    organization: "Five Stars Digital Media",
     description:
       "Recognized for driving engineering execution, system reliability, and cross-team technical alignment.",
   },
   {
-    year: "2023",
+    year: "2024",
     title: "Outstanding Engineering Contribution",
     organization: "Diaspora Digital Media",
     description:

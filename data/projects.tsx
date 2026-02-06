@@ -12,7 +12,7 @@ export const projects = [
     link: "https://safe-report.fivestarsdigitalmedia.com",
   },
   {
-    name: "Housuify",
+    name: "Housify",
     description: "A platform for real estate that eliminates agents and directly connects tenants to landlords.",
     technologies: ["Node.js", "React", "MongoDB", "TailwindCSS"],
     link: "https://housify.fivestarsdigitalmedia.com",
