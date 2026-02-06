@@ -1,0 +1,16 @@
+export const technologies = [
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "Next.js",
+  "React",
+  "React Native",
+  "MongoDB",
+  "PostgreSQL",
+  "TailwindCSS",
+  "Firebase",
+  "AWS",
+  "Docker",
+  "CI/CD",
+  "Agile & Scrum",
+];
