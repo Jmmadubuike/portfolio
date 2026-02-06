@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
   // Favicons / icons
   icons: {
-    icon: "https://jmmadubuike.eduace.org/images/joseph/profile.jpeg",
+    icon: "https://jmmadubuike-portfolio.vercel.app/images/joseph/jtm.jpg",
     shortcut: "https://jmmadubuike.eduace.org/images/joseph/profile.jpeg",
     apple: "https://jmmadubuike.eduace.org/images/joseph/profile.jpeg",
   },
