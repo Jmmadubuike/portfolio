@@ -90,7 +90,7 @@ export default function Page() {
         {/* MEDIA */}
         <Section id="media" className="mt-12">
           <MediaArchive
-            title="Media & Publications"
+            title="Publications"
             items={mediaItems}
           />
         </Section>
