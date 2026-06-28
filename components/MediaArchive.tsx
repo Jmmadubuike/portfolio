@@ -15,20 +15,23 @@ type MediaArchiveProps = {
   title?: string; // optional section title
 };
 
-export default function MediaArchive({ items, title = "Media & Publications" }: MediaArchiveProps) {
+export default function MediaArchive({ items, title = "Work Archive" }: MediaArchiveProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <section id="media" className="py-12 sm:py-16 md:py-20 bg-[#f4f6f2]">
-      {/* Section header with background, padding, border, and rounded corners */}
+    <section id="work-archive" className="py-16 sm:py-20 md:py-24 bg-[#050706] px-4 sm:px-6 lg:px-8">
       {title && (
-        <h2 className="inline-block bg-white px-6 py-3 rounded-lg border border-[#556b2f] font-serif text-2xl sm:text-3xl md:text-4xl text-[#2f4f2f] mb-8 text-center">
-          {title}
-        </h2>
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.24em] text-[#b99d5b]">
+            Evidence
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#f6f1df] mb-8">
+            {title}
+          </h2>
+        </div>
       )}
 
-      {/* Media grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
         {items.map((item, idx) => (
           <MediaCard key={idx} item={item} />
         ))}
@@ -41,19 +44,19 @@ function MediaCard({ item }: { item: MediaItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="p-4 border border-[#556b2f] rounded-lg hover:shadow-lg transition bg-white">
-      <p className="text-[#556b2f] font-semibold text-sm sm:text-base">{item.date}</p>
-      <h3 className="text-[#2f4f2f] font-bold text-lg sm:text-xl md:text-2xl mt-1">{item.title}</h3>
+    <div className="p-5 border border-white/10 rounded-lg hover:border-[#7ef0b0]/35 transition bg-white/[0.035]">
+      <p className="text-[#b99d5b] font-semibold text-sm sm:text-base">{item.date}</p>
+      <h3 className="text-[#f6f1df] font-bold text-lg sm:text-xl md:text-2xl mt-1">{item.title}</h3>
       {item.publisher && (
-        <p className="text-[#556b2f] text-sm sm:text-base mt-1">{item.publisher}</p>
+        <p className="text-[#7ef0b0] text-sm sm:text-base mt-1">{item.publisher}</p>
       )}
       {item.description && (
         <>
           {open ? (
-            <p className="text-[#556b2f] text-sm sm:text-base mt-1">{item.description}</p>
+            <p className="text-[#c9d2c4] text-sm sm:text-base mt-2 leading-7">{item.description}</p>
           ) : (
             <button
-              className="mt-2 text-[#6b8b3d] underline font-semibold"
+              className="mt-2 text-[#7ef0b0] underline font-semibold"
               onClick={() => setOpen(true)}
             >
               Read more

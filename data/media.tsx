@@ -1,40 +1,37 @@
 export const mediaItems = [
   {
-    type: "Project",
+    type: "Work Archive",
     title: "Enterprise Web Platforms & Client Systems",
     description:
-      "Design and delivery of production-grade web applications, including dashboards, content platforms, and internal business tools built with JavaScript, TypeScript, and Node.js.",
+      "Design and delivery of production-grade platforms for dashboards, content operations, business workflows, and internal tools built with JavaScript, TypeScript, and Node.js.",
     date: "Ongoing",
-    image: "/images/projects/web-platforms.jpg",
   },
   {
-    type: "Project",
+    type: "Work Archive",
     title: "Backend APIs & Service Architecture",
     description:
-      "Development of scalable REST APIs and backend services with a focus on security, performance, and long-term maintainability.",
+      "Development of secure, scalable REST APIs and backend services that support reporting, commerce, publishing, coordination, and institutional operations.",
     date: "Ongoing",
-    image: "/images/projects/backend-apis.jpg",
   },
   {
-    type: "Project",
+    type: "Work Archive",
     title: "Multi-Role Web Applications",
     description:
-      "Built web applications supporting multiple user roles (admin, customer, vendor), including authentication, authorization, and payment integrations.",
-    date: "2022 – Present",
-    image: "/images/projects/multi-role-apps.jpg",
+      "Web applications supporting admins, customers, vendors, editors, and operators, including authentication, authorization, workflow control, and payment integrations.",
+    date: "2022 - Present",
   },
   {
     type: "Technical Work",
     title: "System Architecture & Technical Leadership",
     description:
-      "Led engineering decisions, code reviews, and architectural planning across teams, ensuring systems scale without accumulating technical debt.",
+      "Technical planning, code review, engineering leadership, and architecture decisions for platforms that need to scale without losing operational clarity.",
     date: "Ongoing",
   },
   {
-    type: "Writing",
+    type: "Documentation",
     title: "Technical Notes & Internal Documentation",
     description:
-      "Authored technical documentation, system diagrams, and implementation guides to support team alignment and long-term system clarity.",
+      "Technical documentation, system diagrams, and implementation guides that help teams align, maintain systems, and transfer knowledge responsibly.",
     date: "Ongoing",
   },
 ];

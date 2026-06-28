@@ -9,24 +9,22 @@ export default function Metrics({
   return (
     <section
       id="metrics"
-      className={`py-12 sm:py-16 md:py-20 bg-[#f4f6f2] ${className}`}
+      className={`py-16 sm:py-20 md:py-24 bg-[#050706] ${className}`}
     >
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl text-center">
-        {/* Section title with bg and rounded corners */}
         {title && (
-          <h2 className="inline-block bg-white px-6 py-3 rounded-lg border border-[#556b2f] font-serif text-2xl sm:text-3xl md:text-4xl text-[#2f4f2f] mb-8">
+          <h2 className="inline-block border border-[#b99d5b]/30 bg-white/[0.04] px-6 py-3 font-serif text-2xl sm:text-3xl md:text-4xl text-[#f6f1df] mb-8">
             {title}
           </h2>
         )}
 
-        {/* Metrics grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
           {metrics.map((metric, idx) => (
-            <div key={idx} className="text-center">
-              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2f4f2f]">
+            <div key={idx} className="text-center rounded-lg border border-white/10 bg-white/[0.035] p-5">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#7ef0b0]">
                 {metric.value}
               </p>
-              <p className="mt-1 sm:mt-2 text-[#556b2f] text-sm sm:text-base md:text-lg">
+              <p className="mt-2 text-[#c9d2c4] text-sm sm:text-base md:text-lg">
                 {metric.label}
               </p>
             </div>

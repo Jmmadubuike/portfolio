@@ -7,14 +7,14 @@ export default function Technologies({ techs, title = "Technologies & Skills" }:
   if (!techs || techs.length === 0) return null;
 
   return (
-    <section id="technologies" className="py-12 sm:py-16 md:py-20 bg-[#f4f6f2]">
+    <section id="technologies" className="py-16 sm:py-20 md:py-24 bg-[#050706]">
       <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="inline-block bg-white px-6 py-3 rounded-lg border border-[#556b2f] font-serif text-2xl sm:text-3xl md:text-4xl text-[#2f4f2f] mb-8">
+        <h2 className="inline-block border border-[#b99d5b]/30 bg-white/[0.04] px-6 py-3 font-serif text-2xl sm:text-3xl md:text-4xl text-[#f6f1df] mb-8">
           {title}
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
           {techs.map((tech, idx) => (
-            <span key={idx} className="bg-[#6b8b3d] text-white px-3 py-1 rounded-full font-semibold text-sm sm:text-base">
+            <span key={idx} className="border border-white/10 bg-white/[0.04] text-[#dbe5d7] px-3 py-1 rounded-full font-semibold text-sm sm:text-base">
               {tech}
             </span>
           ))}

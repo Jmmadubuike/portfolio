@@ -1,18 +1,29 @@
 export const profile = {
   name: "Joseph Mmadubuike",
-  title: "Software Engineer, Systems Architect & Technology Leader",
-  summary: `Joseph Mmadubuike is a hands-on software engineer and technology leader with deep experience designing, building, and scaling digital products. He specializes in JavaScript and TypeScript ecosystems, with strong backend expertise in Node.js, where he architects reliable APIs, platforms, and business-critical systems.
+  displayName: "J. Mmadubuike",
+  domain: "https://www.josephmmadubuike.com",
+  title:
+    "Technology Executive, Systems Architect, Digital Strategist, and Builder of Infrastructure-Grade Digital Platforms",
+  companyTitle: "Managing Director, Five Stars Digital Media",
+  formerTitle: "Former Chief Technology Officer, Diaspora Digital Media",
+  technicalAlias: "C!PHER",
+  headline:
+    "Technology Executive. Systems Architect. Builder of African Digital Infrastructure.",
+  summary: `Joseph Mmadubuike builds scalable digital platforms across education, commerce, governance, media, logistics, healthcare, hospitality, transport, and entertainment technology, with a focus on practical systems for emerging markets.
 
-Operating at the intersection of engineering and leadership, Joseph has led technical teams, defined system architecture, and translated complex business problems into scalable, production-ready solutions. His work focuses on clarity, execution, and long-term technical sustainability — not hype.`,
+As Managing Director of Five Stars Digital Media and former Chief Technology Officer of Diaspora Digital Media, he works at the intersection of software infrastructure, digital strategy, operational intelligence, and African institutional transformation. Where technically relevant, he also works under the cybersecurity-oriented alias C!PHER.`,
   interests: [
-    "Designing scalable backend systems and APIs using Node.js and TypeScript",
-    "Bridging technical execution with product strategy and leadership decision-making",
-    "Building technology that solves real operational and business problems",
-    "Engineering systems that prioritize performance, maintainability, and security"
+    "Building civic, business, and institutional technology systems that solve operational problems",
+    "Designing scalable platforms, APIs, and workflows for governance, commerce, publishing, and visibility",
+    "Using digital relevance strategy to help organizations become discoverable, trusted, and useful online",
+    "Leading practical execution across software engineering, systems architecture, and media-enabled delivery",
   ],
   contact: {
-    phoneNigeria: "+234 811 28 28 632",
-    email: "josephmmadubuike@gmail.com",
+    publicEmail: "jmmadubuike@gmail.com",
+    publicPhone: "+234 803 66 82 403",
     twitter: "@jmmadubuike",
+    domain: "https://www.josephmmadubuike.com",
+    alternateEmail: "josephmmadubuike@gmail.com",
+    alternatePhoneNigeria: "+234 811 28 28 632",
   },
 };

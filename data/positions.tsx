@@ -1,30 +1,30 @@
 export const positions = [
   {
-    title: "General Manager",
-    organization: "Five Star Digital Media",
+    title: "Managing Director",
+    organization: "Five Stars Digital Media",
     period: "Present",
     description:
-      "Oversees technical strategy, product delivery, and digital operations. Leads engineering execution across web platforms, internal systems, and client-facing products.",
+      "Leads technology, media, product development, digital transformation, and innovation strategy across software engineering, digital infrastructure, enterprise solutions, branding, and digital commerce.",
   },
   {
     title: "Chief Technology Officer",
     organization: "Diaspora Digital Media",
     period: "Former",
     description:
-      "Led system architecture and engineering teams, driving the development of scalable web applications, backend services, and digital media platforms using JavaScript, TypeScript, and Node.js.",
+      "Contributed to technological architecture and digital expansion initiatives focused on African communities locally and internationally.",
   },
   {
     title: "Lead Software Engineer",
     organization: "Independent & Contract Projects",
     period: "Ongoing",
     description:
-      "Designed and built full-stack applications, REST APIs, and backend services with a focus on reliability, performance, and maintainable architecture.",
+      "Designs and builds full-stack platforms, APIs, dashboards, and operational tools for commerce, reporting, coordination, and institutional workflows.",
   },
   {
     title: "Technical Consultant",
     organization: "Startups & Growing Businesses",
     period: "Ongoing",
     description:
-      "Advised founders and teams on system design, technology choices, and execution strategy, translating business requirements into production-ready systems.",
+      "Advises founders and operators on technology choices, system design, execution strategy, and digital relevance for production-ready systems.",
   },
 ];

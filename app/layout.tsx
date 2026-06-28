@@ -1,30 +1,47 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
+const siteUrl = "https://www.josephmmadubuike.com";
+const brandImage = `${siteUrl}/images/brand/og-cto-profile.png`;
+const faviconImage = "/images/brand/favicon.png";
+const shortTitle =
+  "Joseph Mmadubuike | Technology Executive & Systems Architect";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jmmadubuike.eduace.org"),
+  metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Joseph Mmadubuike",
+    default: shortTitle,
     template: "%s | Joseph Mmadubuike",
   },
 
   description:
-    "Joseph Mmadubuike is a tech leader, digital strategist, and media executive driving innovation, diaspora engagement, and sustainable digital transformation in Africa.",
+    "Joseph Mmadubuike is a Nigerian technology executive, digital strategist, systems architect, and Managing Director of Five Stars Digital Media, building scalable digital platforms across education, commerce, governance, media, logistics, healthcare, hospitality, transport, and entertainment technology.",
 
   keywords: [
     "Joseph Mmadubuike",
-    "JMmadubuike",
-    "Diaspora Leader",
-    "Tech Executive",
-    "Digital Transformation",
-    "Diaspora Engagement",
-    "Media Leadership",
-    "Nigeria Diaspora",
-    "Innovation Africa",
+    "J. Mmadubuike",
+    "jmmadubuike",
+    "C!PHER",
+    "Nigerian technology executive",
+    "African technology builder",
+    "systems architect",
+    "digital strategist",
+    "Civic Technology",
+    "education technology",
+    "digital infrastructure",
+    "African innovation",
+    "Five Stars Digital Media",
+    "Diaspora Digital Media",
+    "CTO",
+    "VoteGuard",
+    "SchoolGrid",
+    "Eduace",
+    "SanJoseMart",
+    "EventsTribe",
   ],
 
-  authors: [{ name: "Joseph Mmadubuike", url: "https://jmmadubuike.eduace.org" }],
+  authors: [{ name: "Joseph Mmadubuike", url: siteUrl }],
   creator: "Joseph Mmadubuike",
   publisher: "Joseph Mmadubuike",
 
@@ -40,43 +57,41 @@ export const metadata: Metadata = {
     },
   },
 
-  // Favicons / icons
   icons: {
-    icon: "https://jmmadubuike-portfolio.vercel.app/images/joseph/jtm.jpg",
-    shortcut: "https://jmmadubuike.eduace.org/images/joseph/profile.jpeg",
-    apple: "https://jmmadubuike.eduace.org/images/joseph/profile.jpeg",
+    icon: faviconImage,
+    shortcut: faviconImage,
+    apple: faviconImage,
   },
 
-  // Open Graph (Facebook, LinkedIn, WhatsApp)
   openGraph: {
     type: "profile",
     locale: "en_US",
-    url: "https://jmmadubuike.eduace.org",
-    title: "Joseph Mmadubuike",
+    url: siteUrl,
+    title: shortTitle,
     description:
-      "Tech leader, digital strategist, and media executive advancing digital transformation and diaspora engagement in Africa.",
+      "Nigerian technology executive and systems architect building infrastructure-grade digital platforms across African education, commerce, governance, media, healthcare, transport, and entertainment technology.",
     siteName: "Joseph Mmadubuike",
     images: [
       {
-        url: "https://jmmadubuike.eduace.org/images/joseph/profile.jpeg",
+        url: brandImage,
         width: 1200,
         height: 630,
-        alt: "Joseph Mmadubuike",
+        alt: "Joseph Mmadubuike - Technology Executive and Systems Architect",
       },
     ],
   },
 
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Joseph Mmadubuike",
+    title: shortTitle,
     description:
-      "Tech leader, digital strategist, and media executive shaping Africa’s future through innovation and diaspora engagement.",
-    images: ["https://jmmadubuike.eduace.org/images/joseph/profile.jpeg"],
+      "Nigerian technology executive and systems architect building infrastructure-grade digital platforms across African education, commerce, governance, media, healthcare, transport, and entertainment technology.",
+    creator: "@jmmadubuike",
+    images: [brandImage],
   },
 
   alternates: {
-    canonical: "https://jmmadubuike.eduace.org",
+    canonical: siteUrl,
   },
 };
 
@@ -87,7 +102,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#f4f6f2] text-[#2f4f2f] font-sans antialiased">
+      <body className="bg-[#050706] text-[#f6f1df] font-sans antialiased">
         {children}
       </body>
     </html>
