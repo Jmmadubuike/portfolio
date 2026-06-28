@@ -26,4 +26,31 @@ As Managing Director of Five Stars Digital Media and former Chief Technology Off
     alternateEmail: "josephmmadubuike@gmail.com",
     alternatePhoneNigeria: "+234 811 28 28 632",
   },
+  socialLinks: [
+    {
+      platform: "x",
+      label: "X",
+      url: "https://www.x.com/jmmadubuike",
+    },
+    {
+      platform: "instagram",
+      label: "Instagram",
+      url: "https://www.instagram.com/jmmadubuike",
+    },
+    {
+      platform: "linkedin",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/jmmadubuike",
+    },
+    {
+      platform: "facebook",
+      label: "Facebook",
+      url: "https://www.facebook.com/jmmadubuike",
+    },
+    {
+      platform: "github",
+      label: "GitHub",
+      url: "https://www.github.com/jmmadubuike",
+    },
+  ],
 };
