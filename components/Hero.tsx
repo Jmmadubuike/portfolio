@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type HeroProps = {
@@ -39,31 +40,54 @@ export default function Hero({
 
   return (
     <section
-      className={`relative flex items-end overflow-hidden md:items-center ${className} 
-        min-h-[88vh] md:min-h-screen`}
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className={`relative flex min-h-[88vh] items-end overflow-hidden md:min-h-screen md:items-center ${className}`}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(5,7,6,0.98)_0%,rgba(5,7,6,0.84)_36%,rgba(5,7,6,0.48)_70%,rgba(5,7,6,0.2)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(126,240,176,0.18),transparent_28%),linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:auto,72px_72px,72px_72px]" />
+      <Image
+        src={bgImage}
+        alt={`${name} portrait`}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        style={{ objectPosition: "62% center" }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(5,7,6,0.98)_0%,rgba(5,7,6,0.9)_42%,rgba(5,7,6,0.36)_68%,rgba(5,7,6,0.08)_100%)]" />
+      <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_56%_36%,rgba(255,255,255,0.2),transparent_34%)] md:block" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(126,240,176,0.13),transparent_28%),linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:auto,72px_72px,72px_72px]" />
+      <div className="absolute right-8 top-28 z-10 hidden h-[62vh] max-h-[620px] min-h-[440px] w-[30vw] min-w-[360px] overflow-hidden rounded-lg border border-white/15 bg-[#050706] shadow-2xl shadow-black/40 xl:block">
+        <Image
+          src={bgImage}
+          alt={`${name} portrait detail`}
+          fill
+          sizes="30vw"
+          className="object-cover"
+          style={{ objectPosition: "52% center" }}
+        />
+      </div>
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
-        <div className="max-w-5xl text-center lg:text-left">
+        <div className="max-w-5xl text-center lg:max-w-4xl lg:text-left">
+          <div className="relative mx-auto mb-6 aspect-[4/3] max-h-72 w-full max-w-sm overflow-hidden rounded-lg border border-white/15 bg-[#050706] shadow-2xl shadow-black/35 md:hidden">
+            <Image
+              src={bgImage}
+              alt={`${name} portrait detail`}
+              fill
+              sizes="(max-width: 768px) 90vw"
+              className="object-cover"
+              style={{ objectPosition: "52% center" }}
+            />
+          </div>
           {eyebrow && (
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-[#b99d5b]">
+            <p className="mx-auto mb-4 max-w-[20rem] break-words font-mono text-xs uppercase leading-5 tracking-[0.24em] text-[#b99d5b] lg:mx-0 lg:max-w-none">
               {eyebrow}
             </p>
           )}
           <p className="text-sm font-semibold text-[#7ef0b0]">{name}</p>
-          <h1 className="mt-4 max-w-5xl font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-[#f6f1df] mx-auto lg:mx-0">
+          <h1 className="mx-auto mt-4 max-w-[18rem] break-words font-serif text-2xl font-semibold leading-tight text-[#f6f1df] sm:max-w-5xl sm:text-5xl md:text-6xl lg:mx-0 lg:text-7xl">
             {title}
           </h1>
 
-          <p className="mt-5 max-w-3xl text-[#c9d2c4] text-sm sm:text-base md:text-lg leading-7 md:leading-8 mx-auto lg:mx-0">
+          <p className="mx-auto mt-5 max-w-[18rem] text-sm leading-7 text-[#c9d2c4] sm:max-w-3xl sm:text-base md:text-lg md:leading-8 lg:mx-0">
             {showMore ? summary : preview}
           </p>
           {summary !== preview && (

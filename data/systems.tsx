@@ -20,6 +20,7 @@ export const systems = [
   {
     name: "SchoolGrid",
     category: "Government Education Monitoring / Institutional Oversight",
+    image: "/images/projects/schoolgrid.png",
     description:
       "SchoolGrid is a deployed school monitoring and educational accountability infrastructure platform designed to help education authorities supervise public and private institutions in real time.",
     capabilities: [
@@ -37,6 +38,7 @@ export const systems = [
   {
     name: "VoteGuard",
     category: "Civic Technology / Electoral Transparency",
+    image: "/images/projects/voteguard.png",
     description:
       "VoteGuard is an election monitoring and electoral transparency system conceptualized to improve trust, visibility, and accountability within democratic processes.",
     capabilities: [
@@ -118,6 +120,7 @@ export const systems = [
     name: "EventsTribe",
     category: "Event Technology / Creator Economy Infrastructure",
     website: "https://www.eventstrybe.com",
+    image: "/images/projects/eventstrybe.png",
     description:
       "EventsTribe is a modern entertainment and event technology platform built to support creators, event organizers, entertainers, and digital communities.",
     capabilities: [

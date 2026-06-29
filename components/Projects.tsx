@@ -31,13 +31,15 @@ export default function Projects({ projects, title = "Projects" }: ProjectsProps
           {projects.map((project, idx) => (
             <div key={idx} className="bg-white/[0.035] p-5 rounded-lg border border-white/10 shadow-sm hover:border-[#7ef0b0]/35 transition">
               {project.image && (
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  width={600}
-                  height={360}
-                  className="rounded mb-3"
-                />
+                <div className="mb-4 aspect-[16/10] overflow-hidden rounded-md border border-white/10 bg-[#050706]">
+                  <Image
+                    src={project.image}
+                    alt={`${project.name} platform screenshot`}
+                    width={800}
+                    height={500}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               )}
               {project.category && (
                 <p className="mb-2 inline-flex rounded-full border border-[#7ef0b0]/25 bg-[#7ef0b0]/10 px-3 py-1 text-xs font-semibold text-[#7ef0b0]">

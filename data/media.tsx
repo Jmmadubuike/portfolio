@@ -1,24 +1,27 @@
 export const mediaItems = [
   {
     type: "Work Archive",
-    title: "Enterprise Web Platforms & Client Systems",
+    title: "SchoolGrid Government Education Monitoring",
     description:
-      "Design and delivery of production-grade platforms for dashboards, content operations, business workflows, and internal tools built with JavaScript, TypeScript, and Node.js.",
+      "Production school operations platform for dashboards, compliance visibility, teacher attendance, lesson delivery, incident escalation, and institutional oversight.",
     date: "Ongoing",
+    image: "/images/projects/schoolgrid.png",
   },
   {
     type: "Work Archive",
-    title: "Backend APIs & Service Architecture",
+    title: "EventsTribe Event Access Platform",
     description:
-      "Development of secure, scalable REST APIs and backend services that support reporting, commerce, publishing, coordination, and institutional operations.",
+      "Modern event discovery, ticketing, creator monetization, access control, analytics, and QR validation infrastructure for entertainment communities.",
     date: "Ongoing",
+    image: "/images/projects/eventstrybe.png",
   },
   {
     type: "Work Archive",
-    title: "Multi-Role Web Applications",
+    title: "VoteGuard Electoral Verification System",
     description:
-      "Web applications supporting admins, customers, vendors, editors, and operators, including authentication, authorization, workflow control, and payment integrations.",
+      "Civic technology platform for structured electoral reporting, monitoring, verification workflows, evidence traceability, and public accountability.",
     date: "2022 - Present",
+    image: "/images/projects/voteguard.png",
   },
   {
     type: "Technical Work",
@@ -26,6 +29,7 @@ export const mediaItems = [
     description:
       "Technical planning, code review, engineering leadership, and architecture decisions for platforms that need to scale without losing operational clarity.",
     date: "Ongoing",
+    image: "/images/joseph/jtm.jpg",
   },
   {
     type: "Documentation",

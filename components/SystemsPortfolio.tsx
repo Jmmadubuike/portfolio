@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ExecutiveSection from "@/components/ExecutiveSection";
 
 type SystemItem = {
@@ -7,6 +8,7 @@ type SystemItem = {
   capabilities: string[];
   positioning: string;
   website?: string;
+  image?: string;
 };
 
 type SystemsPortfolioProps = {
@@ -26,6 +28,18 @@ export default function SystemsPortfolio({ systems }: SystemsPortfolioProps) {
             key={system.name}
             className="group rounded-lg border border-white/10 bg-[#111712]/90 p-5 shadow-2xl shadow-black/20 transition hover:border-[#7ef0b0]/45 md:p-6"
           >
+            {system.image && (
+              <div className="mb-5 aspect-[16/9] overflow-hidden rounded-md border border-white/10 bg-[#050706]">
+                <Image
+                  src={system.image}
+                  alt={`${system.name} interface screenshot`}
+                  width={960}
+                  height={540}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
+
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="font-mono text-xs text-[#b99d5b]">

@@ -12,6 +12,7 @@ export const projects = [
     description:
       "School monitoring and institutional oversight infrastructure for real-time supervision, reporting, teacher visibility, and education accountability.",
     technologies: ["Operational Intelligence", "Reporting Systems", "Education Tech"],
+    image: "/images/projects/schoolgrid.png",
   },
   {
     name: "VoteGuard",
@@ -20,6 +21,7 @@ export const projects = [
       "Civic and election integrity technology for transparent monitoring, structured field reporting, and real-time visibility into election activity.",
     technologies: ["Node.js", "React", "MongoDB", "TailwindCSS"],
     link: "https://voteguard.fivestarsdigitalmedia.com",
+    image: "/images/projects/voteguard.png",
   },
   {
     name: "Safe-Report CMS",
@@ -60,5 +62,6 @@ export const projects = [
       "Entertainment and event technology platform for ticketing, event discovery, creator monetization, sponsorship management, analytics, and QR validation.",
     technologies: ["Event Technology", "Creator Tools", "Ticketing Systems"],
     link: "https://www.eventstrybe.com",
+    image: "/images/projects/eventstrybe.png",
   },
 ];

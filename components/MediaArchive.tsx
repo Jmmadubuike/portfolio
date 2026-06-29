@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type MediaItem = {
@@ -8,6 +9,7 @@ type MediaItem = {
   publisher?: string;
   date: string;
   description?: string;
+  image?: string;
 };
 
 type MediaArchiveProps = {
@@ -44,7 +46,19 @@ function MediaCard({ item }: { item: MediaItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="p-5 border border-white/10 rounded-lg hover:border-[#7ef0b0]/35 transition bg-white/[0.035]">
+    <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] transition hover:border-[#7ef0b0]/35">
+      {item.image && (
+        <div className="aspect-[16/10] border-b border-white/10 bg-[#050706]">
+          <Image
+            src={item.image}
+            alt={`${item.title} visual evidence`}
+            width={800}
+            height={500}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
+      <div className="p-5">
       <p className="text-[#b99d5b] font-semibold text-sm sm:text-base">{item.date}</p>
       <h3 className="text-[#f6f1df] font-bold text-lg sm:text-xl md:text-2xl mt-1">{item.title}</h3>
       {item.publisher && (
@@ -64,6 +78,7 @@ function MediaCard({ item }: { item: MediaItem }) {
           )}
         </>
       )}
+      </div>
     </div>
   );
 }
