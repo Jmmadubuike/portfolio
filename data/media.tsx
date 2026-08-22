@@ -29,7 +29,7 @@ export const mediaItems = [
     description:
       "Technical planning, code review, engineering leadership, and architecture decisions for platforms that need to scale without losing operational clarity.",
     date: "Ongoing",
-    image: "/images/joseph/jtm.jpg",
+    image: "/images/joseph/josephmmadubuike.jpeg",
   },
   {
     type: "Documentation",

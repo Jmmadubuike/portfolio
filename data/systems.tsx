@@ -20,7 +20,8 @@ export const systems = [
   {
     name: "SchoolGrid",
     category: "Government Education Monitoring / Institutional Oversight",
-    image: "/images/projects/schoolgrid.png",
+    website: "https://schoolgrid.sanjosedynamics.com",
+    image: "/images/projects/live/schoolgrid.png",
     description:
       "SchoolGrid is a deployed school monitoring and educational accountability infrastructure platform designed to help education authorities supervise public and private institutions in real time.",
     capabilities: [
@@ -38,7 +39,8 @@ export const systems = [
   {
     name: "VoteGuard",
     category: "Civic Technology / Electoral Transparency",
-    image: "/images/projects/voteguard.png",
+    website: "https://voteguard.sanjosemart.com",
+    image: "/images/projects/live/voteguard.png",
     description:
       "VoteGuard is an election monitoring and electoral transparency system conceptualized to improve trust, visibility, and accountability within democratic processes.",
     capabilities: [
@@ -55,6 +57,8 @@ export const systems = [
   {
     name: "SanJoseMart",
     category: "Digital Commerce / Recurring Commerce Infrastructure",
+    website: "https://www.sanjosemart.com",
+    image: "/images/projects/live/sanjosemart.png",
     description:
       "SanJoseMart is a digital commerce ecosystem designed to modernize retail operations, food subscriptions, smart ordering systems, and consumer accessibility.",
     capabilities: [
@@ -120,7 +124,7 @@ export const systems = [
     name: "EventsTribe",
     category: "Event Technology / Creator Economy Infrastructure",
     website: "https://www.eventstrybe.com",
-    image: "/images/projects/eventstrybe.png",
+    image: "/images/projects/live/eventstrybe.png",
     description:
       "EventsTribe is a modern entertainment and event technology platform built to support creators, event organizers, entertainers, and digital communities.",
     capabilities: [

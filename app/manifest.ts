@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function manifest():MetadataRoute.Manifest{return {name:"Joseph Mmadubuike — Technology Builder",short_name:"J. Mmadubuike",description:"Systems architect and builder of African digital infrastructure.",start_url:"/",display:"standalone",background_color:"#07111F",theme_color:"#07111F",icons:[{src:"/images/brand/favicon.png",sizes:"512x512",type:"image/png"}]}}

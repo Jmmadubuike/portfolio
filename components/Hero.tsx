@@ -29,7 +29,7 @@ export default function Hero({
   eyebrow,
   title,
   summary,
-  bgImage = "/images/joseph/jtm.jpg",
+  bgImage = "/images/joseph/josephmmadubuike.jpeg",
   primaryCta,
   secondaryCta,
   tertiaryCta,

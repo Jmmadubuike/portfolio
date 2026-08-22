@@ -1,8 +1,6 @@
-# Joseph Mmadubuike Executive Profile
+# Joseph Mmadubuike — Technology Builder
 
-Official executive technology profile for Joseph Mmadubuike, public display name J. Mmadubuike.
-
-The site presents Joseph as a Nigerian technology executive, systems architect, digital strategist, Managing Director of Five Stars Digital Media, and builder of infrastructure-grade platforms across African education, commerce, governance, media, logistics, healthcare, hospitality, transport, and entertainment technology.
+Official portfolio for Joseph Mmadubuike: Nigerian technology builder, systems architect, and builder of African digital infrastructure. It also houses the public introduction and roadmap for Kwechiri, an Igbo-inspired programming language in active development.
 
 ## Stack
 
