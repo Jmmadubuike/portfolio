@@ -37,7 +37,7 @@ export default function VisionQuote({ quote }: VisionQuoteProps) {
           <figcaption className="mt-6 text-sm text-[#d7c99b]">
             Joseph Mmadubuike
             <br />
-            Managing Director, Five Stars Digital Media
+            Former GM, Five Stars Digital Media
           </figcaption>
         </figure>
       </div>

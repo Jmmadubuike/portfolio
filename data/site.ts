@@ -1,6 +1,6 @@
 export const buildDomains=["Digital Public Infrastructure","Commerce Systems","Educational Technology","Developer Infrastructure","Media Platforms","Operational Systems","Emerging Market Infrastructure"];
 export const leadership=[
-  {period:"2025 — 2026",role:"Managing Director",organization:"Five Stars Digital Media",description:"Led technology, media, product development, digital transformation and innovation strategy."},
+  {period:"2025 — 2026",role:"General Manager",organization:"Five Stars Digital Media",description:"Led technology, media, product development, digital transformation and innovation strategy."},
   {period:"2024 — 2025",role:"Chief Technology Officer",organization:"Diaspora Digital Media",description:"Contributed to technology architecture and digital expansion initiatives serving African communities."},
   {period:"2016 — present",role:"Software Engineering & Architecture",organization:"Independent and contract work",description:"Designs and builds full-stack platforms, APIs, dashboards and operational tools for real institutions and markets."},
 ];

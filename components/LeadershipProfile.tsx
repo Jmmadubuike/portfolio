@@ -34,12 +34,12 @@ export default function LeadershipProfile({
         <div className="rounded-lg border border-white/10 bg-white/[0.04] p-6 md:p-8">
           <div className="space-y-5 text-base leading-8 text-[#c9d2c4]">
             <p>
-              As Managing Director of Five Stars Digital Media, Joseph
-              Mmadubuike leads the company&apos;s technology, media, product
+              As General Manager of Five Stars Digital Media, Joseph
+              Mmadubuike led the company&apos;s technology, media, product
               development, digital transformation, and innovation strategy.
             </p>
             <p>
-              Under his leadership, the organization has expanded into software
+              Under his leadership, the organization expanded into software
               engineering, digital infrastructure, media technology, educational
               systems, enterprise solutions, branding, and digital commerce.
             </p>
@@ -57,7 +57,7 @@ export default function LeadershipProfile({
             Strategic Evolution
           </p>
           <p className="mt-4 text-xl leading-8 text-[#f6f1df]">
-            His transition from CTO to Managing Director represents a move from
+            His transition from CTO to General Manager represented a move from
             engineering leadership into enterprise innovation, ecosystem
             development, and infrastructure-grade platform strategy.
           </p>

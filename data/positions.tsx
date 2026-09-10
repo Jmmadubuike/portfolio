@@ -1,10 +1,10 @@
 export const positions = [
   {
-    title: "Managing Director",
+    title: "General Manager",
     organization: "Five Stars Digital Media",
-    period: "Present",
+    period: "Former",
     description:
-      "Leads technology, media, product development, digital transformation, and innovation strategy across software engineering, digital infrastructure, enterprise solutions, branding, and digital commerce.",
+      "Led technology, media, product development, digital transformation, and innovation strategy across software engineering, digital infrastructure, enterprise solutions, branding, and digital commerce.",
   },
   {
     title: "Chief Technology Officer",

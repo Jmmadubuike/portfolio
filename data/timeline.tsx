@@ -1,9 +1,9 @@
 export const timelineEvents = [
   {
     year: "2025",
-    title: "Managing Director - Five Stars Digital Media",
+    title: "General Manager - Five Stars Digital Media",
     description:
-      "Leading technology, media, product development, digital transformation, and innovation strategy across software, infrastructure, enterprise solutions, and commerce.",
+      "Led technology, media, product development, digital transformation, and innovation strategy across software, infrastructure, enterprise solutions, and commerce.",
   },
   {
     year: "2024",

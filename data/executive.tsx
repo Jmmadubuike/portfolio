@@ -1,6 +1,6 @@
 export const biographyParagraphs = [
   "Joseph Mmadubuike is a Nigerian technology executive, digital strategist, systems architect, and innovation-driven entrepreneur known for building scalable digital platforms across education, commerce, media, governance, logistics, healthcare, hospitality, transport, and entertainment technology.",
-  "He currently serves as the Managing Director of Five Stars Digital Media and is the former Chief Technology Officer of Diaspora Digital Media.",
+  "He previously served as General Manager of Five Stars Digital Media and as Chief Technology Officer of Diaspora Digital Media.",
   "Recognized for combining technology with operational systems thinking, Joseph focuses on solving African structural problems through software infrastructure, automation, accountability systems, and digital platforms designed specifically for emerging markets.",
   "His work spans educational monitoring systems, electoral transparency solutions, digital commerce, pharmaceutical inventory infrastructure, transport digitization, hospitality systems, and creator-driven media ecosystems.",
   "As a technology leader, Joseph is known for transforming ideas into deployable systems with real-world utility. His philosophy centers on creating technology that is practical, scalable, locally adaptable, and capable of driving institutional efficiency across Africa.",
