@@ -16,7 +16,7 @@ export const profile = {
     countryCode: "NG",
     display: "Abia State, Nigeria",
   },
-  summary: `Joseph Mmadubuike builds scalable digital platforms across education, commerce, governance, media, logistics, healthcare, hospitality, transport, and entertainment technology, with a focus on practical systems for emerging markets.
+  summary: `Joseph Mmadubuike builds scalable digital platforms across education, commerce, governance, media, community, logistics, healthcare, hospitality, transport, and entertainment technology, with a focus on practical systems for emerging markets.
 
 Previously General Manager of Five Stars Digital Media and Chief Technology Officer of Diaspora Digital Media, he works at the intersection of software infrastructure, digital strategy, operational intelligence, and African institutional transformation. Where technically relevant, he also works under the cybersecurity-oriented alias C!PHER.`,
   interests: [

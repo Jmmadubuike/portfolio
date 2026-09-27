@@ -139,4 +139,22 @@ export const systems = [
     positioning:
       "Designed to modernize entertainment operations while giving African creators and organizers scalable digital infrastructure.",
   },
+  {
+    name: "BuzzBuntu",
+    category: "Media & Community Platform / African Discovery",
+    website: "https://www.buzzbuntu.com",
+    image: "/images/projects/live/buzzbuntu.png",
+    description:
+      "BuzzBuntu is a live African discovery and connection platform built around people, stories, culture, enterprise, and opportunity, spanning editorial publishing, business discovery, marketplace listings, and diaspora-facing content.",
+    capabilities: [
+      "Editorial publishing and story discovery",
+      "Culture, tourism, and diaspora content",
+      "Business directory and enterprise profiles",
+      "Marketplace and service listings",
+      "Account and community membership",
+      "Advertising and sponsored placement",
+    ],
+    positioning:
+      "Built as a discovery layer for African stories, businesses, and opportunities, connecting continental and diaspora audiences inside one live platform.",
+  },
 ];

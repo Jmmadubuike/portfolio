@@ -1,5 +1,14 @@
 export const projects = [
   {
+    name: "BuzzBuntu",
+    category: "Media & Community Platform",
+    description:
+      "Live African discovery and connection platform for people, stories, culture, business listings, marketplace services, and diaspora-facing opportunity.",
+    technologies: ["Publishing Systems", "Marketplace", "Community Platform"],
+    link: "https://www.buzzbuntu.com",
+    image: "/images/projects/live/buzzbuntu.png",
+  },
+  {
     name: "Eduace",
     category: "Education Infrastructure",
     description:

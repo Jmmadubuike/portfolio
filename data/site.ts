@@ -1,4 +1,4 @@
-export const buildDomains=["Digital Public Infrastructure","Commerce Systems","Educational Technology","Developer Infrastructure","Media Platforms","Operational Systems","Emerging Market Infrastructure"];
+export const buildDomains=["Digital Public Infrastructure","Commerce Systems","Educational Technology","Developer Infrastructure","Media Platforms","Community & Culture Platforms","Operational Systems","Emerging Market Infrastructure"];
 export const leadership=[
   {period:"2025 — 2026",role:"General Manager",organization:"Five Stars Digital Media",description:"Led technology, media, product development, digital transformation and innovation strategy."},
   {period:"2024 — 2025",role:"Chief Technology Officer",organization:"Diaspora Digital Media",description:"Contributed to technology architecture and digital expansion initiatives serving African communities."},
@@ -6,6 +6,7 @@ export const leadership=[
 ];
 
 export const liveProjects=[
+  {name:"BuzzBuntu",category:"Media & Community Platform",description:"A live platform for discovering and connecting with African people, stories, culture, enterprise and opportunities.",url:"https://www.buzzbuntu.com",domain:"buzzbuntu.com",image:"/images/projects/live/buzzbuntu.png"},
   {name:"JM DevLab",category:"Technology Education",description:"A learning platform where people acquire practical ICT, digital productivity and software-development skills.",url:"https://devlab.josephmmadubuike.com",domain:"devlab.josephmmadubuike.com",image:"/images/projects/live/devlab.png"},
   {name:"SanjoseMart",category:"E-commerce",description:"An e-commerce platform for discovering, comparing and buying technology products online.",url:"https://www.sanjosemart.com",domain:"sanjosemart.com",image:"/images/projects/live/sanjosemart.png"},
   {name:"EventsTrybe",category:"Events & Ticketing",description:"An event discovery and booking platform connecting people with live culture, entertainment and trusted event access.",url:"https://www.eventstrybe.com",domain:"eventstrybe.com",image:"/images/projects/live/eventstrybe.png"},
