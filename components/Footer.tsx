@@ -3,15 +3,6 @@ import { profile } from "@/data/profile";
 import { workProjects } from "@/data/work";
 import Brand from "@/components/Brand";
 
-const quickLinks = [
-  { label: "Work", href: "/work" },
-  { label: "Kwechiri", href: "/kwechiri" },
-  { label: "Services", href: "/services" },
-  { label: "Activity", href: "/#activity" },
-  { label: "Leadership", href: "/#leadership" },
-  { label: "About", href: "/#about" },
-];
-
 const headingClass = "font-mono text-[.65rem] uppercase tracking-[.18em] text-[#16c7d9]";
 const linkClass = "transition-colors hover:text-white";
 
@@ -21,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[#23384d] bg-[#050d18] py-12">
       <div className="site-shell">
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.15fr_.55fr_1fr_.85fr] xl:gap-12">
+        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.1fr_.55fr_1fr_.9fr] xl:gap-12">
           <div>
             <Link href="/" className="text-xl font-bold"><Brand /></Link>
             <p className="mt-4 max-w-md leading-7 text-[#9eadba]">{profile.headline}</p>
@@ -32,32 +23,34 @@ export default function Footer() {
             </a>
           </div>
 
-          <nav aria-label="Footer navigation">
-            <p className={headingClass}>Explore</p>
+          <nav aria-label="Main pages">
+            <p className={headingClass}>Navigate</p>
             <ul className="mt-5 space-y-3 text-sm text-[#9eadba]">
-              {quickLinks.map((link) => (
-                <li key={link.label}><Link href={link.href} className={linkClass}>{link.label}</Link></li>
-              ))}
+              <li><Link href="/" className={linkClass}>Home</Link></li>
+              <li><Link href="/about" className={linkClass}>About</Link></li>
+              <li><Link href="/portfolio" className={linkClass}>Portfolio</Link></li>
+              <li><Link href="/contact" className={linkClass}>Contact</Link></li>
             </ul>
           </nav>
 
-          <nav aria-label="Portfolio work">
-            <p className={headingClass}>Work</p>
+          <nav aria-label="Portfolio projects">
+            <p className={headingClass}>Portfolio</p>
             <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-[#9eadba]">
               {workProjects.map((project) => (
                 <li key={project.slug}>
-                  <Link href={`/work/${project.slug}`} className={linkClass}>{project.name}</Link>
+                  <Link href={`/portfolio/${project.slug}`} className={linkClass}>{project.name}</Link>
                 </li>
               ))}
+              <li><Link href="/portfolio/kwechiri" className={linkClass}>Kwechiri</Link></li>
             </ul>
           </nav>
 
           <div>
-            <p className={headingClass}>Connect</p>
+            <p className={headingClass}>Contact</p>
             <ul className="mt-5 space-y-3 text-sm text-[#9eadba]">
               <li><a href={`mailto:${profile.contact.publicEmail}`} className={linkClass}>{profile.contact.publicEmail}</a></li>
-              <li><Link href="/services" className={linkClass}>Consultation — $100/hour</Link></li>
-              <li><Link href="/services" className={linkClass}>Mentorship — scope-based</Link></li>
+              <li><Link href="/contact#services" className={linkClass}>Consultation</Link></li>
+              <li><Link href="/contact#services" className={linkClass}>Mentorship</Link></li>
               <li className="text-[#708293]">Based in {profile.location.display}</li>
             </ul>
             <ul className="mt-5 space-y-2 text-sm text-[#9eadba]">

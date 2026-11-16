@@ -10,7 +10,7 @@ type WorkCardProps = {
 export default function WorkCard({ project, compact = false }: WorkCardProps) {
   return (
     <article className="panel panel-hover group flex h-full flex-col overflow-hidden transition duration-300">
-      <Link href={`/work/${project.slug}`} className="block focus-visible:outline-offset-[-4px]">
+      <Link href={`/portfolio/${project.slug}`} className="block focus-visible:outline-offset-[-4px]">
         <div className={`relative overflow-hidden border-b border-[#23384d] bg-white ${compact ? "aspect-[16/10]" : "aspect-[16/9]"}`}>
           <Image
             src={project.image}
@@ -28,11 +28,11 @@ export default function WorkCard({ project, compact = false }: WorkCardProps) {
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <p className="section-label">{project.category}</p>
         <h3 className="mt-3 text-2xl font-semibold tracking-[-.035em]">
-          <Link href={`/work/${project.slug}`} className="hover:text-white">{project.name}</Link>
+          <Link href={`/portfolio/${project.slug}`} className="hover:text-white">{project.name}</Link>
         </h3>
         <p className="mt-3 flex-1 text-sm leading-7 text-[#9eadba]">{project.description}</p>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[#23384d] pt-4">
-          <Link href={`/work/${project.slug}`} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#16c7d9] hover:text-white">
+          <Link href={`/portfolio/${project.slug}`} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#16c7d9] hover:text-white">
             View system brief <span className="ml-2" aria-hidden="true">→</span>
           </Link>
           <a href={project.url} target="_blank" rel="noreferrer" aria-label={`Open the live ${project.name} platform`} className="inline-flex min-h-11 items-center text-xs font-semibold text-[#9eadba] hover:text-white">

@@ -2,19 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
 import WorkExplorer from "@/components/WorkExplorer";
 import { workProjects } from "@/data/work";
 
 export const metadata: Metadata = {
-  title: "Work — Production Systems",
+  title: "Portfolio — Production Systems",
   description:
     "Selected production systems by Joseph Mmadubuike across public infrastructure, civic technology, commerce, media, education and operations.",
-  alternates: { canonical: "/work" },
+  alternates: { canonical: "/portfolio" },
   openGraph: {
     type: "website",
-    url: "/work",
-    title: "Work — Production Systems | Joseph Mmadubuike",
+    url: "/portfolio",
+    title: "Portfolio — Production Systems | Joseph Mmadubuike",
     description:
       "Explore verified public systems across public infrastructure, commerce, media, education and operational technology.",
   },
@@ -23,9 +22,9 @@ export const metadata: Metadata = {
 const collectionJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Work — Production Systems",
+  name: "Portfolio — Production Systems",
   description: "Selected production platforms built by Joseph Mmadubuike.",
-  url: "https://www.josephmmadubuike.com/work",
+  url: "https://www.josephmmadubuike.com/portfolio",
   hasPart: workProjects.map((project) => ({
     "@type": "WebSite",
     name: project.name,
@@ -46,11 +45,11 @@ export default function WorkPage() {
           <div className="absolute -right-40 top-0 h-[28rem] w-[28rem] rounded-full bg-[#16c7d9]/10 blur-[120px]" />
           <div className="site-shell relative py-12 sm:py-16 lg:py-20">
             <p className="font-mono text-[.66rem] uppercase tracking-[.16em] text-[#708293]">
-              <Link href="/" className="hover:text-white">Joseph Mmadubuike</Link> <span aria-hidden="true">/</span> Work
+              <Link href="/" className="hover:text-white">Joseph Mmadubuike</Link> <span aria-hidden="true">/</span> Portfolio
             </p>
             <div className="mt-8 grid gap-7 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
               <div>
-                <p className="section-label">WORK / PRODUCTION SYSTEMS</p>
+                <p className="section-label">PORTFOLIO / PRODUCTION SYSTEMS</p>
                 <h1 className="display mt-5 max-w-[14ch]">Systems built for consequence.</h1>
                 <p className="lead mt-6 max-w-2xl">
                   Public platforms spanning institutional oversight, civic accountability, commerce, media, education and operational control.
@@ -76,7 +75,7 @@ export default function WorkPage() {
 
         <section className="border-b border-[#23384d] bg-[#0d1b2a]">
           <div className="site-shell py-6">
-            <Link href="/kwechiri" className="group flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <Link href="/portfolio/kwechiri" className="group flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
                 <span className="h-2 w-2 shrink-0 rounded-full bg-[#d7a84b]" aria-hidden="true" />
                 <p className="text-sm"><span className="font-semibold">Kwechiri</span> <span className="text-[#9eadba]">— developer infrastructure and Igbo-first language design</span></p>
@@ -90,7 +89,7 @@ export default function WorkPage() {
           <div className="site-shell">
             <div className="grid gap-6 lg:grid-cols-[1fr_.75fr] lg:items-end">
               <div>
-                <p className="section-label">SYSTEMS / CASE STUDIES</p>
+                <p className="section-label">PORTFOLIO / CASE STUDIES</p>
                 <h2 className="section-title mt-5">Explore the work by operating context.</h2>
               </div>
               <p className="lead max-w-xl lg:justify-self-end">
@@ -103,7 +102,16 @@ export default function WorkPage() {
           </div>
         </section>
 
-        <ContactForm context="New digital system" />
+        <section className="section border-t border-[#23384d]">
+          <div className="site-shell panel flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="section-label">CONTACT / NEW SYSTEM</p>
+              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">Need something comparable built?</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#9eadba]">Bring the operating problem and the required outcome. The system starts there.</p>
+            </div>
+            <Link href="/contact" className="btn btn-primary w-full lg:w-auto">Discuss a project <span aria-hidden="true">→</span></Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

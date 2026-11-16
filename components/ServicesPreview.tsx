@@ -24,7 +24,7 @@ export default function ServicesPreview() {
             <p className="mt-5 flex-1 text-sm leading-7 text-[#9eadba]">
               Architecture reviews, platform strategy, product direction and senior technical decision support.
             </p>
-            <Link href="/services#contact" className="btn btn-primary mt-7 w-full sm:w-auto">Book a consultation <span aria-hidden="true">→</span></Link>
+            <Link href="/contact#contact" className="btn btn-primary mt-7 w-full sm:w-auto">Book a consultation <span aria-hidden="true">→</span></Link>
           </article>
 
           <article className="panel flex flex-col p-6 sm:p-8">
@@ -36,12 +36,12 @@ export default function ServicesPreview() {
             <p className="mt-5 flex-1 text-sm leading-7 text-[#9eadba]">
               Share your goals, experience and current challenge first. Mentorship scope and pricing are then agreed around what you actually need.
             </p>
-            <Link href="/services#contact" className="btn btn-secondary mt-7 w-full sm:w-auto">Discuss mentorship <span aria-hidden="true">→</span></Link>
+            <Link href="/contact#contact" className="btn btn-secondary mt-7 w-full sm:w-auto">Discuss mentorship <span aria-hidden="true">→</span></Link>
           </article>
         </div>
 
         <div className="mt-5 text-right">
-          <Link href="/services" className="text-link inline-flex min-h-11 items-center font-semibold">Explore services and process <span className="ml-2" aria-hidden="true">→</span></Link>
+          <Link href="/contact#services" className="text-link inline-flex min-h-11 items-center font-semibold">Explore services and process <span className="ml-2" aria-hidden="true">→</span></Link>
         </div>
       </div>
     </section>

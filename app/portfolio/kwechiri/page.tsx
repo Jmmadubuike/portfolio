@@ -3,18 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
-import Brand from "@/components/Brand";
 import { kwechiri } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Kwechiri — The Igbo-first Programming Language",
   description:
     "Kwechiri is an Igbo-first programming language by Joseph Mmadubuike. The CLI is published on npm and the language is supported in VS Code.",
-  alternates: { canonical: "/kwechiri" },
+  alternates: { canonical: "/portfolio/kwechiri" },
   openGraph: {
     type: "website",
-    url: "/kwechiri",
+    url: "/portfolio/kwechiri",
     title: "Kwechiri — The Igbo-first Programming Language",
     description:
       "An Igbo-first programming language published on npm with official VS Code support.",
@@ -57,7 +55,10 @@ export default function KwechiriPage() {
           <div className="absolute right-0 top-10 h-[35rem] w-[35rem] rounded-full bg-[#d7a84b]/10 blur-[130px]" />
           <div className="site-shell relative grid min-h-[calc(80svh-7rem)] items-center gap-12 py-16 lg:grid-cols-[1.12fr_.88fr]">
             <div>
-              <Link href="/" className="mb-10 block w-fit text-sm font-bold text-[#f4f7fa] hover:text-[#16c7d9]"><Brand /></Link>
+              <nav aria-label="Breadcrumb" className="mb-10 font-mono text-[.66rem] uppercase tracking-[.16em] text-[#708293]">
+                <Link href="/" className="hover:text-white">Joseph Mmadubuike</Link> <span aria-hidden="true">/</span>{" "}
+                <Link href="/portfolio" className="hover:text-white">Portfolio</Link> <span aria-hidden="true">/</span> Kwechiri
+              </nav>
               <p className="section-label !text-[#d7a84b]">LANG / 001 · NPM + VS CODE</p>
               <h1 className="display mt-6 max-w-5xl">Kwechiri<span className="text-[#d7a84b]">_</span><br /><span className="text-[#9eadba]">An Igbo-first programming language.</span></h1>
               <p className="lead mt-9 max-w-3xl">{kwechiri.description}</p>
@@ -157,12 +158,21 @@ export default function KwechiriPage() {
             <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
               <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="btn w-full border-[#07111f] bg-[#07111f] !text-white sm:w-auto">Install from npm <span aria-hidden="true">↗</span></a>
               <a href={kwechiri.links.source} target="_blank" rel="noreferrer" className="btn w-full border-[#07111f] sm:w-auto">View source <span aria-hidden="true">↗</span></a>
-              <a href="#contact" className="btn w-full border-[#07111f] sm:w-auto">Ask about Kwechiri <span aria-hidden="true">↓</span></a>
+              <Link href="/contact" className="btn w-full border-[#07111f] sm:w-auto">Ask about Kwechiri <span aria-hidden="true">→</span></Link>
             </div>
           </div>
         </section>
 
-        <ContactForm context="Kwechiri" theme="gold" />
+        <section className="section border-t border-[#23384d]">
+          <div className="site-shell panel flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="section-label">CONTACT / KWECHIRI</p>
+              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">Discuss the language or a related system.</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#9eadba]">Use the Contact page for Kwechiri questions, collaborations or technical engagements.</p>
+            </div>
+            <Link href="/contact" className="btn btn-primary w-full lg:w-auto">Contact Joseph <span aria-hidden="true">→</span></Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

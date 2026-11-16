@@ -6,14 +6,14 @@ import ContactForm from "@/components/ContactForm";
 import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "Consultation & Mentorship",
+  title: "Contact — Consultation & Mentorship",
   description:
     "Book technical consultation with Joseph Mmadubuike at $100 per hour, or request scope-based mentorship and receive pricing after an initial discussion.",
-  alternates: { canonical: "/services" },
+  alternates: { canonical: "/contact" },
   openGraph: {
     type: "website",
-    url: "/services",
-    title: "Consultation & Mentorship | Joseph Mmadubuike",
+    url: "/contact",
+    title: "Contact — Consultation & Mentorship | Joseph Mmadubuike",
     description:
       "Technical consultation at $100 per hour and scope-based mentorship for individuals and teams.",
   },
@@ -49,7 +49,7 @@ export default function ServicesPage() {
           <div className="absolute -right-40 top-0 h-[28rem] w-[28rem] rounded-full bg-[#d7a84b]/[.08] blur-[120px]" />
           <div className="site-shell relative py-12 sm:py-16 lg:py-20">
             <p className="font-mono text-[.66rem] uppercase tracking-[.16em] text-[#708293]">
-              <Link href="/" className="hover:text-white">Joseph Mmadubuike</Link> <span aria-hidden="true">/</span> Services
+              <Link href="/" className="hover:text-white">Joseph Mmadubuike</Link> <span aria-hidden="true">/</span> Contact
             </p>
             <p className="section-label mt-8">SERVICES / DIRECT SUPPORT</p>
             <h1 className="display mt-5 max-w-[13ch]">Clear advice. Focused guidance.</h1>
@@ -59,7 +59,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="section">
+        <section id="services" className="section">
           <div className="site-shell grid gap-4 md:grid-cols-2">
             <article className="panel flex flex-col p-6 sm:p-8">
               <div className="flex items-start justify-between gap-5">

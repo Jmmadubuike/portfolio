@@ -26,7 +26,7 @@ export default function KwechiriFeature() {
             ))}
           </div>
           <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
-            <Link href="/kwechiri" className="btn btn-primary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
+            <Link href="/portfolio/kwechiri" className="btn btn-primary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
             <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto">Install from npm <span aria-hidden="true">↗</span></a>
             <a href={kwechiri.links.vscode} target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto">VS Code extension <span aria-hidden="true">↗</span></a>
           </div>

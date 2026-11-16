@@ -29,13 +29,13 @@ export default function Hero() {
             I turn complex institutional problems into dependable platforms across education, governance, commerce, media and emerging markets.
           </p>
           <p className="mt-5 max-w-2xl border-l border-[#d7a84b]/50 pl-4 text-sm leading-7 text-[#dbe5ec] sm:text-base">
-            Creator of <Link href="/kwechiri" className="font-semibold text-[#d7a84b] hover:text-white">Kwechiri</Link>, an Igbo-first programming language published on npm and available in VS Code.
+            Creator of <Link href="/portfolio/kwechiri" className="font-semibold text-[#d7a84b] hover:text-white">Kwechiri</Link>, an Igbo-first programming language published on npm and available in VS Code.
           </p>
 
           <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
-            <a href="#contact" className="btn btn-primary w-full sm:w-auto">Start a Conversation <span aria-hidden="true">↗</span></a>
-            <Link href="/kwechiri" className="btn btn-secondary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
-            <Link href="/work" className="btn btn-secondary w-full sm:w-auto">Explore Work</Link>
+            <Link href="/contact" className="btn btn-primary w-full sm:w-auto">Start a Conversation <span aria-hidden="true">↗</span></Link>
+            <Link href="/portfolio/kwechiri" className="btn btn-secondary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
+            <Link href="/portfolio" className="btn btn-secondary w-full sm:w-auto">Explore Portfolio</Link>
           </div>
         </div>
 

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
 import WorkCard from "@/components/WorkCard";
 import { getRelatedWork, getWorkProject, workProjects } from "@/data/work";
 
@@ -26,10 +25,10 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   return {
     title,
     description: project.description,
-    alternates: { canonical: `/work/${project.slug}` },
+    alternates: { canonical: `/portfolio/${project.slug}` },
     openGraph: {
       type: "website",
-      url: `/work/${project.slug}`,
+      url: `/portfolio/${project.slug}`,
       title: `${title} | Joseph Mmadubuike`,
       description: project.description,
       images: [{ url: project.image, alt: `${project.name} public platform preview` }],
@@ -70,7 +69,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div>
               <p className="font-mono text-[.66rem] uppercase tracking-[.16em] text-[#708293]">
                 <Link href="/" className="hover:text-white">Joseph Mmadubuike</Link> <span aria-hidden="true">/</span>{" "}
-                <Link href="/work" className="hover:text-white">Work</Link> <span aria-hidden="true">/</span> {project.name}
+                <Link href="/portfolio" className="hover:text-white">Portfolio</Link> <span aria-hidden="true">/</span> {project.name}
               </p>
               <p className="section-label mt-8">{project.category}</p>
               <h1 className="display mt-5 max-w-[12ch]">{project.name}</h1>
@@ -79,7 +78,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <a href={project.url} target="_blank" rel="noreferrer" className="btn btn-primary w-full sm:w-auto">
                   Visit live platform <span aria-hidden="true">↗</span>
                 </a>
-                <a href="#contact" className="btn btn-secondary w-full sm:w-auto">Discuss similar work</a>
+                <Link href="/contact" className="btn btn-secondary w-full sm:w-auto">Discuss similar work</Link>
               </div>
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs text-[#9eadba]">
                 <span className="inline-flex items-center gap-2">
@@ -179,7 +178,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <p className="section-label">NEXT / RELATED SYSTEMS</p>
                 <h2 className="section-title mt-5">More production work.</h2>
               </div>
-              <Link href="/work" className="text-link inline-flex min-h-11 items-center font-semibold">View all work <span className="ml-2" aria-hidden="true">→</span></Link>
+              <Link href="/portfolio" className="text-link inline-flex min-h-11 items-center font-semibold">View full portfolio <span className="ml-2" aria-hidden="true">→</span></Link>
             </div>
             <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {related.map((item) => <WorkCard key={item.slug} project={item} compact />)}
@@ -187,7 +186,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        <ContactForm context={project.name} />
+        <section className="section border-t border-[#23384d]">
+          <div className="site-shell panel flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="section-label">NEXT / DIRECT CONTACT</p>
+              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">Discuss work in this category.</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#9eadba]">Use the Contact page to discuss a comparable system, consultation or mentorship.</p>
+            </div>
+            <Link href="/contact" className="btn btn-primary w-full lg:w-auto">Contact Joseph <span aria-hidden="true">→</span></Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

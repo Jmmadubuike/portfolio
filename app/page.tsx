@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import ExecutionSignal from "@/components/ExecutionSignal";
 import KwechiriFeature from "@/components/KwechiriFeature";
 import ServicesPreview from "@/components/ServicesPreview";
-import ContactForm from "@/components/ContactForm";
 import WorkCard from "@/components/WorkCard";
 import { getGitHubSignal } from "@/data/github";
 import { profile } from "@/data/profile";
@@ -99,7 +98,7 @@ export default async function Page() {
 
             <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-[#23384d] pt-5 sm:flex-row sm:items-center">
               <p className="text-sm text-[#708293]">The complete directory spans eight live systems across four operating families.</p>
-              <Link href="/work" className="text-link inline-flex min-h-11 items-center font-semibold">Explore all work <span className="ml-2" aria-hidden="true">→</span></Link>
+              <Link href="/portfolio" className="text-link inline-flex min-h-11 items-center font-semibold">Explore the full portfolio <span className="ml-2" aria-hidden="true">→</span></Link>
             </div>
           </div>
         </section>
@@ -179,7 +178,16 @@ export default async function Page() {
           </div>
         </section>
 
-        <ContactForm />
+        <section className="section border-t border-[#23384d]">
+          <div className="site-shell panel flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="section-label">CONTACT / NEXT STEP</p>
+              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">Start a focused conversation.</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#9eadba]">Discuss a system, consultation or scope-based mentorship directly with Joseph.</p>
+            </div>
+            <Link href="/contact" className="btn btn-primary w-full lg:w-auto">Go to Contact <span aria-hidden="true">→</span></Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

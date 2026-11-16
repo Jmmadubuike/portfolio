@@ -5,11 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import Brand from "@/components/Brand";
 
 const links = [
-  { label: "Work", href: "/work" },
-  { label: "Kwechiri", href: "/kwechiri" },
-  { label: "Services", href: "/services" },
-  { label: "Leadership", href: "/#leadership" },
-  { label: "About", href: "/#about" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const focusableSelector = [
@@ -100,7 +99,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a href="#contact" className="btn btn-primary text-sm">Let&apos;s Talk <span aria-hidden="true">↗</span></a>
           </div>
           <button
             ref={triggerRef}
@@ -150,9 +148,6 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <a href="#contact" onClick={() => setOpen(false)} className="btn btn-primary mb-3 w-full">
-              Start a Conversation <span aria-hidden="true">↗</span>
-            </a>
           </div>
         </div>
       )}
