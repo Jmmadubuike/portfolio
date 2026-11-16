@@ -1,5 +1,5 @@
 import type { GitHubSignal } from "@/data/github";
-import { liveProjects } from "@/data/site";
+import { kwechiri, liveProjects } from "@/data/site";
 
 type ExecutionSignalProps = {
   signal: GitHubSignal;
@@ -15,7 +15,7 @@ export default function ExecutionSignal({ signal }: ExecutionSignalProps) {
   const proofs = [
     { value: numberFormat.format(signal.publicRepos), label: "Public repositories" },
     { value: `${liveProjects.length}`, label: "Live production systems" },
-    { value: "1.1.0", label: "Kwechiri release" },
+    { value: kwechiri.version, label: "Kwechiri release" },
   ];
 
   return (

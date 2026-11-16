@@ -8,8 +8,8 @@ export default function KwechiriFeature() {
       <div className="absolute inset-0 grid-bg opacity-60" />
       <div className="site-shell relative grid gap-8 lg:grid-cols-[.78fr_1.22fr] lg:items-center lg:gap-12">
         <div>
-          <div className="relative aspect-square w-full max-w-[22rem] overflow-hidden rounded-3xl border border-[#d7a84b]/35 bg-white shadow-2xl shadow-black/30">
-            <Image src="/images/projects/live/kwechiri-logo.jpeg" alt="Kwechiri — programming in Igbo logo" fill sizes="(max-width:1024px) 80vw,28vw" className="object-contain" />
+          <div className="relative aspect-square w-full max-w-[22rem] overflow-hidden rounded-3xl border border-[#d7a84b]/35 bg-black shadow-2xl shadow-black/30">
+            <Image src="/images/projects/kwechiri/kwechiri-logo-main.png" alt="Kwechiri — Igbo-first programming language logo" fill sizes="(max-width:1024px) 80vw,28vw" className="object-contain" />
           </div>
           <p className="section-label mt-7 !text-[#d7a84b]">LANG / 001 · NPM + VS CODE</p>
           <h2 className="section-title mt-5">Kwechiri</h2>

@@ -53,9 +53,14 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[linear-gradient(to_top,#07111f_0%,transparent_50%),linear-gradient(130deg,rgba(22,199,217,.13),transparent_48%)]" />
             <div className="absolute inset-x-4 bottom-4 rounded-xl border border-white/10 bg-[#07111f]/82 p-4 backdrop-blur-md sm:inset-x-5 sm:bottom-5">
               <div className="flex items-center justify-between gap-3">
-                <div>
-                  <p className="font-mono text-[.6rem] uppercase tracking-[.18em] text-[#d7a84b]">Flagship / Released</p>
-                  <p className="mt-1.5 font-semibold">Kwechiri {kwechiri.version}</p>
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-black">
+                    <Image src="/images/projects/kwechiri/kwechiri-mark.png" alt="" fill sizes="44px" className="object-contain" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-mono text-[.6rem] uppercase tracking-[.18em] text-[#d7a84b]">Flagship / Released</p>
+                    <p className="mt-1.5 font-semibold">Kwechiri {kwechiri.version}</p>
+                  </div>
                 </div>
                 <div className="flex gap-2 text-[.64rem] font-semibold uppercase tracking-wider text-[#9eadba]">
                   <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="rounded-full border border-white/10 px-2.5 py-1.5 hover:border-[#16c7d9] hover:text-white">npm</a>

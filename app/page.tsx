@@ -10,7 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import { getGitHubSignal } from "@/data/github";
 import { systems } from "@/data/systems";
 import { profile } from "@/data/profile";
-import { leadership, liveProjects } from "@/data/site";
+import { kwechiri, leadership, liveProjects } from "@/data/site";
 
 export const revalidate = 21600;
 
@@ -56,7 +56,7 @@ const kwechiriJsonLd = {
   "@type": "SoftwareSourceCode",
   name: "Kwechiri",
   description: "An Igbo-first programming language published on npm and supported in VS Code.",
-  softwareVersion: "1.1.0",
+  softwareVersion: kwechiri.version,
   codeRepository: "https://github.com/Jmmadubuike/kwechiri-programming-language",
   url: "https://kwechiri.dev",
   author: { "@id": `${profile.domain}/#person` },

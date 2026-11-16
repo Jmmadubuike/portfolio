@@ -67,8 +67,8 @@ export default function KwechiriPage() {
                 <a href={kwechiri.links.vscode} target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto">VS Code extension <span aria-hidden="true">↗</span></a>
               </div>
             </div>
-            <div className="relative mx-auto aspect-square w-full max-w-[31rem] overflow-hidden rounded-[2rem] border border-[#d7a84b]/35 bg-white shadow-2xl shadow-black/40">
-              <Image src="/images/projects/live/kwechiri-logo.jpeg" alt="Kwechiri — programming in Igbo logo" fill priority sizes="(max-width:1024px) 88vw,38vw" className="object-contain" />
+            <div className="relative mx-auto aspect-square w-full max-w-[31rem] overflow-hidden rounded-[2rem] border border-[#d7a84b]/35 bg-black shadow-2xl shadow-black/40">
+              <Image src="/images/projects/kwechiri/kwechiri-logo-main.png" alt="Kwechiri — Igbo-first programming language logo" fill priority sizes="(max-width:1024px) 88vw,38vw" className="object-contain" />
             </div>
           </div>
         </section>
@@ -77,7 +77,7 @@ export default function KwechiriPage() {
           <div className="site-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
             <div>
               <p className="section-label">STATUS / RELEASED</p>
-              <h2 className="section-title mt-5">Kwechiri 1.1.0 is available. The language is still evolving.</h2>
+              <h2 className="section-title mt-5">Kwechiri {kwechiri.version} is available. The language is still evolving.</h2>
             </div>
             <div>
               <p className="lead">{kwechiri.note}</p>
@@ -126,7 +126,7 @@ export default function KwechiriPage() {
             <div className="space-y-6 text-lg leading-8 text-[#9eadba]">
               <p>Kwechiri asks what becomes possible when an African language is considered at the language-design layer—not only translated into an interface after the technology has already been defined.</p>
               <p>The project explores indigenous-language computing, accessible developer experience and the relationship between technical systems and cultural identity.</p>
-              <p>The current release includes Unicode Igbo identifiers, an npm CLI and VS Code diagnostics. Future capabilities remain documented as the implementation develops.</p>
+              <p>The current release includes Unicode Igbo identifiers, multiline string literals, an npm CLI and VS Code diagnostics. Future capabilities remain documented as the implementation develops.</p>
             </div>
           </div>
         </section>
@@ -135,7 +135,7 @@ export default function KwechiriPage() {
           <div className="site-shell">
             <p className="section-label">ECOSYSTEM / ROADMAP</p>
             <h2 className="section-title mt-5">Released foundations. A broader vision ahead.</h2>
-            <p className="lead mt-7 max-w-3xl">Kwechiri 1.1.0 provides the released language and compiler foundations. The longer-term vision includes broader documentation, tooling and the future Kwechiri Browser.</p>
+            <p className="lead mt-7 max-w-3xl">Kwechiri {kwechiri.version} adds multiline strings while preserving the released language and compiler foundations. The longer-term vision includes broader documentation, tooling and the future Kwechiri Browser.</p>
             <ol className="mt-14 grid gap-4 lg:grid-cols-4">
               {kwechiri.roadmap.map((item, index) => (
                 <li key={item.name} className="panel relative min-h-56 p-6">
