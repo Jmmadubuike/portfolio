@@ -285,13 +285,13 @@ export default async function Page() {
           </div>
         </section>
 
-        <section id="philosophy" className="section relative overflow-hidden border-t border-[#23384d]">
+        <section id="philosophy" aria-labelledby="philosophy-statement" className="section relative overflow-hidden border-t border-[#23384d]">
           <div className="absolute inset-0 grid-bg" />
           <div className="site-shell relative">
             <p className="section-label">WORKING PRINCIPLE / 001</p>
-            <p className="mt-7 max-w-6xl text-[clamp(2rem,5.7vw,5rem)] font-semibold leading-[1.04] tracking-[-.05em]">
+            <h2 id="philosophy-statement" className="mt-7 max-w-6xl text-[clamp(2rem,5.7vw,5rem)] font-semibold leading-[1.04] tracking-[-.05em]">
               Software becomes more valuable when it stops being merely software <span className="text-[#9eadba]">and becomes infrastructure people depend on.</span>
-            </p>
+            </h2>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link href="/kwechiri" className="btn btn-secondary">See the flagship release <span aria-hidden="true">→</span></Link>
               <p className="font-mono text-[.66rem] uppercase tracking-[.15em] text-[#708293]">Systems / Language / Delivery</p>

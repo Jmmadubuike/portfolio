@@ -28,7 +28,7 @@ export default function ExecutionSignal({ signal }: ExecutionSignalProps) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#16c7d9] opacity-50" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#16c7d9]" />
               </span>
-              <p id="activity-title" className="font-mono text-[.66rem] font-semibold uppercase tracking-[.18em] text-[#16c7d9]">Active engineering signal</p>
+              <h2 id="activity-title" className="font-mono text-[.66rem] font-semibold uppercase tracking-[.18em] text-[#16c7d9]">Active engineering signal</h2>
             </div>
             <div className="mt-5 flex items-end gap-3">
               <p className="text-[clamp(3rem,12vw,5.25rem)] font-semibold leading-none tracking-[-.07em] text-[#f4f7fa]">{numberFormat.format(signal.commitCount)}</p>
