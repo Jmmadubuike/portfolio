@@ -1,132 +1,72 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { profile } from "@/data/profile";
+import { kwechiri } from "@/data/site";
 
-type HeroProps = {
-  name: string;
-  eyebrow?: string;
-  title: string;
-  summary: string;
-  bgImage?: string;
-  primaryCta?: {
-    label: string;
-    href: string;
-  };
-  secondaryCta?: {
-    label: string;
-    href: string;
-  };
-  tertiaryCta?: {
-    label: string;
-    href: string;
-  };
-  className?: string;
-};
-
-export default function Hero({
-  name,
-  eyebrow,
-  title,
-  summary,
-  bgImage = "/images/joseph/josephmmadubuike.jpeg",
-  primaryCta,
-  secondaryCta,
-  tertiaryCta,
-  className = "",
-}: HeroProps) {
-  const [showMore, setShowMore] = useState(false);
-  const preview = summary.split("\n")[0];
-
+export default function Hero() {
   return (
-    <section
-      className={`relative flex min-h-[88vh] items-end overflow-hidden md:min-h-screen md:items-center ${className}`}
-    >
-      <Image
-        src={bgImage}
-        alt={`${name} portrait`}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-        style={{ objectPosition: "62% center" }}
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(5,7,6,0.98)_0%,rgba(5,7,6,0.9)_42%,rgba(5,7,6,0.36)_68%,rgba(5,7,6,0.08)_100%)]" />
-      <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_56%_36%,rgba(255,255,255,0.2),transparent_34%)] md:block" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(126,240,176,0.13),transparent_28%),linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:auto,72px_72px,72px_72px]" />
-      <div className="absolute right-8 top-28 z-10 hidden h-[62vh] max-h-[620px] min-h-[440px] w-[30vw] min-w-[360px] overflow-hidden rounded-lg border border-white/15 bg-[#050706] shadow-2xl shadow-black/40 xl:block">
-        <Image
-          src={bgImage}
-          alt={`${name} portrait detail`}
-          fill
-          sizes="30vw"
-          className="object-cover"
-          style={{ objectPosition: "52% center" }}
-        />
-      </div>
+    <section className="relative overflow-hidden pt-24 sm:pt-28">
+      <div className="absolute inset-0 grid-bg opacity-70" />
+      <div className="absolute -left-48 top-0 h-[34rem] w-[34rem] rounded-full bg-[#16c7d9]/10 blur-[120px]" />
+      <div className="absolute -right-52 top-[28rem] h-[30rem] w-[30rem] rounded-full bg-[#d7a84b]/[.07] blur-[120px]" />
 
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
-        <div className="max-w-5xl text-center lg:max-w-4xl lg:text-left">
-          <div className="relative mx-auto mb-6 aspect-[4/3] max-h-72 w-full max-w-sm overflow-hidden rounded-lg border border-white/15 bg-[#050706] shadow-2xl shadow-black/35 md:hidden">
-            <Image
-              src={bgImage}
-              alt={`${name} portrait detail`}
-              fill
-              sizes="(max-width: 768px) 90vw"
-              className="object-cover"
-              style={{ objectPosition: "52% center" }}
-            />
+      <div className="site-shell relative grid min-h-[calc(100svh-6rem)] items-center gap-9 py-10 sm:gap-12 sm:py-14 lg:grid-cols-[1.1fr_.9fr] lg:py-16">
+        <div className="hero-enter">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <p className="section-label">CTO / SYSTEMS / AFRICA</p>
+            <span className="h-1 w-1 rounded-full bg-[#708293]" aria-hidden="true" />
+            <p className="font-mono text-[.66rem] uppercase tracking-[.16em] text-[#9eadba]">Available for strategic work</p>
           </div>
-          {eyebrow && (
-            <p className="mx-auto mb-4 max-w-[20rem] break-words font-mono text-xs uppercase leading-5 tracking-[0.24em] text-[#b99d5b] lg:mx-0 lg:max-w-none">
-              {eyebrow}
-            </p>
-          )}
-          <p className="text-sm font-semibold text-[#7ef0b0]">{name}</p>
-          <h1 className="mx-auto mt-4 max-w-[18rem] break-words font-serif text-2xl font-semibold leading-tight text-[#f6f1df] sm:max-w-5xl sm:text-5xl md:text-6xl lg:mx-0 lg:text-7xl">
-            {title}
+
+          <h1 className="display mt-6 max-w-[18ch]">
+            Technology Executive.<br />
+            Systems Architect.<br />
+            <span className="text-[#9eadba]">Building African</span><br />
+            <span className="text-[#16c7d9]">Digital Infrastructure.</span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-[18rem] text-sm leading-7 text-[#c9d2c4] sm:max-w-3xl sm:text-base md:text-lg md:leading-8 lg:mx-0">
-            {showMore ? summary : preview}
+          <p className="lead mt-7 max-w-2xl">
+            I turn complex institutional problems into dependable platforms across education, governance, commerce, media and emerging markets.
           </p>
-          {summary !== preview && (
-            <button
-              className="mt-2 text-[#d8e8b6] underline font-semibold"
-              onClick={() => setShowMore(!showMore)}
-            >
-              {showMore ? "Read less" : "Read more"}
-            </button>
-          )}
+          <p className="mt-5 max-w-2xl border-l border-[#d7a84b]/50 pl-4 text-sm leading-7 text-[#dbe5ec] sm:text-base">
+            Creator of <Link href="/kwechiri" className="font-semibold text-[#d7a84b] hover:text-white">Kwechiri</Link>, an Igbo-first programming language published on npm and available in VS Code.
+          </p>
 
-          {(primaryCta || secondaryCta || tertiaryCta) && (
-            <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3 justify-center lg:justify-start">
-              {primaryCta && (
-                <a
-                  href={primaryCta.href}
-                  className="inline-flex items-center justify-center rounded-md bg-[#7ef0b0] px-4 py-3 text-sm sm:px-5 sm:text-base font-semibold text-[#061008] shadow-sm hover:bg-[#a5ffc9] transition"
-                >
-                  {primaryCta.label}
-                </a>
-              )}
-              {secondaryCta && (
-                <a
-                  href={secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-md border border-white/20 px-4 py-3 text-sm sm:px-5 sm:text-base font-semibold text-[#f6f1df] hover:bg-white/10 transition"
-                >
-                  {secondaryCta.label}
-                </a>
-              )}
-              {tertiaryCta && (
-                <a
-                  href={tertiaryCta.href}
-                  className="inline-flex items-center justify-center rounded-md border border-[#b99d5b]/45 px-4 py-3 text-sm sm:px-5 sm:text-base font-semibold text-[#d7c99b] hover:bg-[#b99d5b]/10 transition"
-                >
-                  {tertiaryCta.label}
-                </a>
-              )}
+          <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+            <a href="#contact" className="btn btn-primary w-full sm:w-auto">Start a Conversation <span aria-hidden="true">↗</span></a>
+            <Link href="/kwechiri" className="btn btn-secondary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
+            <a href="#systems" className="btn btn-secondary w-full sm:w-auto">See Production Systems</a>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[34rem] lg:mx-0 lg:justify-self-end">
+          <div className="absolute -inset-3 rounded-[2.4rem] border border-[#23384d] sm:-inset-5 sm:rounded-[3rem]" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.8rem] border border-[#23384d] bg-[#122235] sm:rounded-[2.4rem]">
+            <Image
+              src="/images/joseph/josephmmadubuike.jpeg"
+              alt="Portrait of Joseph Mmadubuike"
+              fill
+              priority
+              sizes="(max-width:1024px) 92vw,40vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_top,#07111f_0%,transparent_50%),linear-gradient(130deg,rgba(22,199,217,.13),transparent_48%)]" />
+            <div className="absolute inset-x-4 bottom-4 rounded-xl border border-white/10 bg-[#07111f]/82 p-4 backdrop-blur-md sm:inset-x-5 sm:bottom-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="font-mono text-[.6rem] uppercase tracking-[.18em] text-[#d7a84b]">Flagship / Released</p>
+                  <p className="mt-1.5 font-semibold">Kwechiri {kwechiri.version}</p>
+                </div>
+                <div className="flex gap-2 text-[.64rem] font-semibold uppercase tracking-wider text-[#9eadba]">
+                  <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="rounded-full border border-white/10 px-2.5 py-1.5 hover:border-[#16c7d9] hover:text-white">npm</a>
+                  <a href={kwechiri.links.vscode} target="_blank" rel="noreferrer" className="rounded-full border border-white/10 px-2.5 py-1.5 hover:border-[#16c7d9] hover:text-white">VS Code</a>
+                </div>
+              </div>
             </div>
-          )}
+          </div>
+          <p className="mt-4 text-right font-mono text-[.62rem] uppercase tracking-[.17em] text-[#708293]">
+            {profile.name} / {profile.location.short.toUpperCase()}
+          </p>
         </div>
       </div>
     </section>

@@ -61,10 +61,10 @@ export default function KwechiriPage() {
               <p className="section-label !text-[#d7a84b]">LANG / 001 · NPM + VS CODE</p>
               <h1 className="display mt-6 max-w-5xl">Kwechiri<span className="text-[#d7a84b]">_</span><br /><span className="text-[#9eadba]">An Igbo-first programming language.</span></h1>
               <p className="lead mt-9 max-w-3xl">{kwechiri.description}</p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a href="#status" className="btn btn-primary">Explore the release <span aria-hidden="true">↓</span></a>
-                <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="btn btn-secondary">Install from npm <span aria-hidden="true">↗</span></a>
-                <a href={kwechiri.links.vscode} target="_blank" rel="noreferrer" className="btn btn-secondary">VS Code extension <span aria-hidden="true">↗</span></a>
+              <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
+                <a href="#status" className="btn btn-primary w-full sm:w-auto">Explore the release <span aria-hidden="true">↓</span></a>
+                <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto">Install from npm <span aria-hidden="true">↗</span></a>
+                <a href={kwechiri.links.vscode} target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto">VS Code extension <span aria-hidden="true">↗</span></a>
               </div>
             </div>
             <div className="relative mx-auto aspect-square w-full max-w-[31rem] overflow-hidden rounded-[2rem] border border-[#d7a84b]/35 bg-white shadow-2xl shadow-black/40">
@@ -99,9 +99,9 @@ export default function KwechiriPage() {
               <p className="section-label">QUICK / START</p>
               <h2 className="section-title mt-5">Install and run Kwechiri.</h2>
               <p className="lead mt-7">The CLI requires Node.js 20 or newer. Kwechiri source files use the <code className="font-mono text-[#16c7d9]">.kwe</code> extension.</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href={kwechiri.links.source} target="_blank" rel="noreferrer" className="btn btn-primary">View source <span aria-hidden="true">↗</span></a>
-                <a href={kwechiri.links.website} target="_blank" rel="noreferrer" className="btn btn-secondary">kwechiri.dev <span aria-hidden="true">↗</span></a>
+              <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+                <a href={kwechiri.links.source} target="_blank" rel="noreferrer" className="btn btn-primary w-full sm:w-auto">View source <span aria-hidden="true">↗</span></a>
+                <a href={kwechiri.links.website} target="_blank" rel="noreferrer" className="btn btn-secondary w-full sm:w-auto">kwechiri.dev <span aria-hidden="true">↗</span></a>
               </div>
             </div>
             <div className="panel overflow-hidden">
@@ -154,10 +154,10 @@ export default function KwechiriPage() {
             <p className="font-mono text-xs font-semibold uppercase tracking-[.18em]">LANG / AVAILABLE NOW</p>
             <h2 className="mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-none tracking-[-.05em]">Install Kwechiri. Follow the work. Build with us.</h2>
             <p className="mt-7 max-w-2xl text-lg leading-8">The npm CLI and VS Code extension are publicly available. The source repository and language roadmap continue in public.</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="btn border-[#07111f] bg-[#07111f] !text-white">Install from npm <span aria-hidden="true">↗</span></a>
-              <a href={kwechiri.links.source} target="_blank" rel="noreferrer" className="btn border-[#07111f]">View source <span aria-hidden="true">↗</span></a>
-              <a href="#contact" className="btn border-[#07111f]">Ask about Kwechiri <span aria-hidden="true">↓</span></a>
+            <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
+              <a href={kwechiri.links.npm} target="_blank" rel="noreferrer" className="btn w-full border-[#07111f] bg-[#07111f] !text-white sm:w-auto">Install from npm <span aria-hidden="true">↗</span></a>
+              <a href={kwechiri.links.source} target="_blank" rel="noreferrer" className="btn w-full border-[#07111f] sm:w-auto">View source <span aria-hidden="true">↗</span></a>
+              <a href="#contact" className="btn w-full border-[#07111f] sm:w-auto">Ask about Kwechiri <span aria-hidden="true">↓</span></a>
             </div>
           </div>
         </section>

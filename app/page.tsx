@@ -2,37 +2,306 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import ExecutionSignal from "@/components/ExecutionSignal";
 import KwechiriFeature from "@/components/KwechiriFeature";
+import OperatingPrinciples from "@/components/OperatingPrinciples";
 import ContactForm from "@/components/ContactForm";
-import { metrics } from "@/data/metrics";
+import { getGitHubSignal } from "@/data/github";
 import { systems } from "@/data/systems";
 import { profile } from "@/data/profile";
-import { buildDomains,leadership,liveProjects } from "@/data/site";
+import { leadership, liveProjects } from "@/data/site";
 
-const featured=systems.filter(system=>["SchoolGrid","VoteGuard","SanJoseMart","EventsTribe","BuzzBuntu"].includes(system.name));
-const personJsonLd={"@context":"https://schema.org","@type":"Person","@id":`${profile.domain}/#person`,name:"Joseph Mmadubuike",alternateName:"J. Mmadubuike",jobTitle:profile.title,url:profile.domain,address:{"@type":"PostalAddress",addressRegion:profile.location.state,addressCountry:profile.location.countryCode},image:`${profile.domain}/images/joseph/josephmmadubuike.jpeg`,sameAs:profile.socialLinks.map(link=>link.url),knowsAbout:["Software Architecture","Systems Engineering","Digital Infrastructure","African Technology","Programming Languages","Community Platforms","BuzzBuntu","Kwechiri"]};
-const websiteJsonLd={"@context":"https://schema.org","@type":"WebSite",name:"Joseph Mmadubuike",url:profile.domain,description:"The technology portfolio and public engineering laboratory of Joseph Mmadubuike."};
-const buzzbuntuJsonLd={"@context":"https://schema.org","@type":"WebSite","@id":"https://www.buzzbuntu.com/#website",name:"BuzzBuntu","alternateName":"Africa's Pulse",url:"https://www.buzzbuntu.com",description:"BuzzBuntu is Africa's Pulse, a live platform for discovering and connecting with African people, stories, culture, enterprise and opportunities.",inLanguage:"en",creator:{"@id":`${profile.domain}/#person`},author:{"@id":`${profile.domain}/#person`}};
+export const revalidate = 21600;
 
-export default function Page(){return <><Navbar/><main id="main-content">
-  <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify([personJsonLd,websiteJsonLd,buzzbuntuJsonLd]).replace(/</g,"\\u003c")}}/>
-  <section className="relative min-h-[min(58rem,100svh)] overflow-hidden pt-28"><div className="absolute inset-0 grid-bg opacity-70"/><div className="absolute -left-48 top-0 h-[34rem] w-[34rem] rounded-full bg-[#16c7d9]/10 blur-[120px]"/><div className="site-shell relative grid min-h-[calc(min(58rem,100svh)-7rem)] items-center gap-12 py-12 lg:grid-cols-[1.15fr_.85fr]">
-    <div><p className="section-label">BUILDER / SYSTEMS / AFRICA</p><h1 className="display mt-6">Technology Builder.<br/>Systems Architect.<br/><span className="text-[#9eadba]">Builder of African</span><br/><span className="text-[#16c7d9]">Digital Infrastructure.</span></h1><p className="lead mt-8 max-w-2xl">Building production systems across education, commerce, governance, media and emerging African markets.</p><p className="mt-5 max-w-2xl text-base leading-7 text-[#dbe5ec]">Creator of <Link href="/kwechiri" className="font-semibold text-[#d7a84b] transition-colors hover:text-white">Kwechiri</Link>, an Igbo-first programming language published on npm and available in VS Code.</p><div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap"><a href="#systems" className="btn btn-primary w-full sm:w-auto">Explore My Systems <span aria-hidden="true">→</span></a><Link href="/kwechiri" className="btn btn-secondary w-full sm:w-auto">Discover Kwechiri <span aria-hidden="true">→</span></Link><a href="#contact" className="btn btn-secondary w-full sm:w-auto">Start a Conversation <span aria-hidden="true">↗</span></a></div></div>
-    <div className="relative mx-auto w-full max-w-[34rem]"><div className="absolute -inset-5 rounded-[3rem] border border-[#23384d] [clip-path:polygon(8%_0,100%_0,100%_87%,83%_100%,0_100%,0_12%)]"/><div className="relative aspect-[4/5] overflow-hidden bg-[#122235] [clip-path:polygon(8%_0,100%_0,100%_87%,83%_100%,0_100%,0_12%)]"><Image src="/images/joseph/josephmmadubuike.jpeg" alt="Portrait of Joseph Mmadubuike" fill priority sizes="(max-width:1024px) 90vw,40vw" className="object-cover object-center"/><div className="absolute inset-0 bg-[linear-gradient(to_top,#07111f_0%,transparent_45%),linear-gradient(130deg,rgba(22,199,217,.14),transparent_48%)]"/></div><p className="absolute bottom-5 left-5 font-mono text-[.65rem] uppercase tracking-[.18em] text-[#9eadba]">JOSEPH MMADUBUIKE / {profile.location.short.toUpperCase()}</p></div>
-  </div></section>
+const featured = systems.filter((system) => ["SchoolGrid", "VoteGuard", "SanJoseMart"].includes(system.name));
 
-  <section aria-label="Impact metrics" className="border-y border-[#23384d] bg-[#0d1b2a]"><div className="site-shell grid grid-cols-2 md:grid-cols-5">{metrics.map((metric,index)=><div key={metric.label} className={`py-8 ${index%2?"pl-5":""} md:border-l md:border-[#23384d] md:px-5 md:first:border-l-0`}><p className="text-4xl font-semibold tracking-[-.05em] text-[#f4f7fa] md:text-5xl">{metric.value}</p><p className="mt-3 max-w-[10rem] text-xs leading-5 text-[#9eadba]">{metric.label}</p></div>)}</div></section>
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${profile.domain}/#person`,
+  name: "Joseph Mmadubuike",
+  alternateName: "J. Mmadubuike",
+  jobTitle: profile.title,
+  url: profile.domain,
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: profile.location.state,
+    addressCountry: profile.location.countryCode,
+  },
+  image: `${profile.domain}/images/joseph/josephmmadubuike.jpeg`,
+  sameAs: profile.socialLinks.map((link) => link.url),
+  knowsAbout: [
+    "Software Architecture",
+    "Systems Engineering",
+    "Digital Infrastructure",
+    "African Technology",
+    "Programming Languages",
+    "Igbo-first programming",
+    "BuzzBuntu",
+    "Kwechiri",
+  ],
+};
 
-  <section id="systems" className="section"><div className="site-shell"><p className="section-label">SYS / FLAGSHIP</p><div className="mt-5 flex flex-col justify-between gap-6 md:flex-row md:items-end"><h2 className="section-title">Systems built for the real world.</h2><p className="lead max-w-xl">Selected infrastructure across education, civic accountability, commerce, media, community and creator operations.</p></div><div className="mt-16 space-y-8">{featured.map((system,index)=><article key={system.name} className="panel grid overflow-hidden transition duration-300 hover:border-[#16c7d9] lg:grid-cols-2"><a href={system.website!} target="_blank" rel="noreferrer" aria-label={`Open the live ${system.name} system`} className={`group relative min-h-72 overflow-hidden bg-[#0a1623] ${index%2?"lg:order-2":""}`}><Image src={system.image!} alt={`${system.name} live homepage`} fill sizes="(max-width:1024px) 100vw,50vw" className="object-cover object-top transition duration-500 group-hover:scale-[1.015]"/><span className="absolute left-5 top-5 rounded-md border border-[#23384d] bg-[#07111f]/90 px-3 py-2 font-mono text-[.65rem] uppercase tracking-[.16em] text-[#16c7d9]">SYS / {String(index+1).padStart(3,"0")} · LIVE</span><span className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#16c7d9] text-xl text-[#07111f]" aria-hidden="true">↗</span></a><div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14"><p className="section-label">{system.category}</p><h3 className="mt-4 text-4xl font-semibold tracking-[-.04em]">{system.name}</h3><p className="mt-5 leading-7 text-[#9eadba]">{system.description}</p><div className="mt-7 flex flex-wrap gap-2">{system.capabilities.slice(0,3).map(item=><span key={item} className="rounded-md border border-[#23384d] px-3 py-2 text-xs text-[#9eadba]">{item}</span>)}</div><a href={system.website!} target="_blank" rel="noreferrer" className="text-link mt-7 w-fit text-sm font-semibold">Visit {system.name} ↗</a></div></article>)}</div><div className="mt-9"><a href="#evidence" className="text-link font-semibold">Explore all live systems →</a></div></div></section>
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Joseph Mmadubuike",
+  url: profile.domain,
+  description: "The technology portfolio and public engineering laboratory of Joseph Mmadubuike.",
+};
 
-  <KwechiriFeature/>
-  <section className="section"><div className="site-shell"><p className="section-label">BUILD / DOMAINS</p><h2 className="section-title mt-5">What I build.</h2><div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-[#23384d] bg-[#23384d] sm:grid-cols-2 lg:grid-cols-3">{buildDomains.map((domain,index)=><div key={domain} className="min-h-44 bg-[#0d1b2a] p-6 transition-colors hover:bg-[#122235]"><span className="font-mono text-xs text-[#16c7d9]">0{index+1}</span><h3 className="mt-12 text-xl font-semibold">{domain}</h3></div>)}</div></div></section>
+const kwechiriJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  name: "Kwechiri",
+  description: "An Igbo-first programming language published on npm and supported in VS Code.",
+  softwareVersion: "1.1.0",
+  codeRepository: "https://github.com/Jmmadubuike/kwechiri-programming-language",
+  url: "https://kwechiri.dev",
+  author: { "@id": `${profile.domain}/#person` },
+};
 
-  <section id="leadership" className="section border-y border-[#23384d] bg-[#0d1b2a]"><div className="site-shell grid gap-14 lg:grid-cols-[.75fr_1.25fr]"><div><p className="section-label">LEAD / EXPERIENCE</p><h2 className="section-title mt-5">Leadership is systems work, too.</h2><p className="lead mt-7">Building technology is one part of the work. Building teams, operating systems and institutions is the other.</p></div><div>{leadership.map(item=><article key={item.role} className="grid gap-4 border-t border-[#23384d] py-7 sm:grid-cols-[9rem_1fr]"><p className="font-mono text-xs uppercase tracking-wider text-[#d7a84b]">{item.period}</p><div><h3 className="text-xl font-semibold">{item.role}</h3><p className="mt-1 text-sm text-[#16c7d9]">{item.organization}</p><p className="mt-4 leading-7 text-[#9eadba]">{item.description}</p></div></article>)}</div></div></section>
+const buzzbuntuJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.buzzbuntu.com/#website",
+  name: "BuzzBuntu",
+  alternateName: "Africa's Pulse",
+  url: "https://www.buzzbuntu.com",
+  description: "BuzzBuntu is a live platform for discovering and connecting with African people, stories, culture, enterprise and opportunities.",
+  inLanguage: "en",
+  creator: { "@id": `${profile.domain}/#person` },
+  author: { "@id": `${profile.domain}/#person` },
+};
 
-  <section id="evidence" className="section"><div className="site-shell"><p className="section-label">LIVE / PRODUCTION SYSTEMS</p><div className="mt-5 flex flex-col justify-between gap-6 md:flex-row md:items-end"><h2 className="section-title">Explore the systems live.</h2><p className="lead max-w-xl">Real homepage previews from platforms built across learning, commerce, events, food, media, community, government supervision, civic technology and operations.</p></div><div className="mt-12 grid gap-5 md:grid-cols-2">{liveProjects.map((project,index)=><a key={project.name} href={project.url} target="_blank" rel="noreferrer" aria-label={`Visit ${project.name} at ${project.domain}`} className={`panel group overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-[#16c7d9] ${index===0?"md:col-span-2":""}`}><article><div className={`relative overflow-hidden border-b border-[#23384d] bg-white ${index===0?"aspect-[16/7]":"aspect-[16/10]"}`}><Image src={project.image} alt={`${project.name} live homepage preview`} fill sizes={index===0?"(max-width:768px) 100vw,85vw":"(max-width:768px) 100vw,45vw"} className="object-cover object-top transition duration-500 group-hover:scale-[1.015]"/></div><div className="p-6 sm:p-7"><div className="flex items-start justify-between gap-4"><div><p className="section-label">LIVE / {project.category}</p><h3 className="mt-3 text-2xl font-semibold">{project.name}</h3></div><span className="text-xl text-[#16c7d9]" aria-hidden="true">↗</span></div><p className="mt-4 max-w-2xl text-sm leading-7 text-[#9eadba]">{project.description}</p><p className="mt-5 break-all font-mono text-[.68rem] tracking-wide text-[#16c7d9]">{project.domain}</p></div></article></a>)}</div></div></section>
+export default async function Page() {
+  const githubSignal = await getGitHubSignal();
 
-  <section id="about" className="section border-y border-[#23384d] bg-[#0d1b2a]"><div className="site-shell grid gap-12 lg:grid-cols-[1fr_.82fr]"><div><p className="section-label">ABOUT / 001</p><h2 className="section-title mt-5">Built at the intersection of engineering and institutional reality.</h2><div className="mt-8 space-y-6 text-lg leading-8 text-[#9eadba]"><p>Joseph Mmadubuike is a Nigerian technology builder and systems architect focused on practical digital infrastructure for African institutions, businesses and emerging markets.</p><p>His work begins with the operational problem behind the interface: how people coordinate, how institutions maintain visibility, where accountability breaks down and what a dependable system must make easier.</p><p>Across education, commerce, civic technology, media and workplace operations, he turns complex workflows into production platforms with clear roles, structured data and measurable outcomes.</p><p>His engineering practice spans product architecture, full-stack development, APIs, dashboards, access controls and the technical foundations needed to keep software useful beyond its initial launch.</p><p>Leadership experience has also shaped how he builds. Technology must work for the teams operating it, the institutions responsible for it and the people who ultimately depend on it.</p></div><div className="mt-9 grid gap-3 sm:grid-cols-2"><div className="panel p-5"><p className="section-label">FOCUS / SYSTEMS</p><p className="mt-4 leading-7 text-[#9eadba]">Architecture, implementation and operational clarity.</p></div><div className="panel p-5"><p className="section-label">FOCUS / AFRICA</p><p className="mt-4 leading-7 text-[#9eadba]">Infrastructure designed around real emerging-market conditions.</p></div></div></div><div className="panel mx-auto w-full max-w-[28rem] overflow-hidden self-start"><video className="aspect-[9/16] w-full bg-[#07111f] object-cover" controls playsInline preload="metadata" poster="/images/joseph/josephmmadubuike.jpeg" aria-label="Short portrait video featuring Joseph Mmadubuike"><source src="/images/joseph/josephmmadubuike.mp4" type="video/mp4"/>Your browser does not support embedded video. <a href="/images/joseph/josephmmadubuike.mp4">Download the video</a>.</video><div className="flex items-center justify-between gap-4 border-t border-[#23384d] px-5 py-4"><p className="font-mono text-[.68rem] uppercase tracking-[.16em] text-[#9eadba]">JOSEPH / IN MOTION</p><span className="h-2 w-2 rounded-full bg-[#16c7d9]" aria-hidden="true"/></div></div></div></section>
-  <section id="philosophy" className="section relative overflow-hidden"><div className="absolute inset-0 grid-bg"/><div className="site-shell relative"><p className="section-label">PHILOSOPHY / 001</p><p className="mt-8 max-w-6xl text-[clamp(2.2rem,5.7vw,5rem)] font-semibold leading-[1.04] tracking-[-.05em]">Software becomes more valuable when it stops being merely software <span className="text-[#9eadba]">and becomes infrastructure people depend on.</span></p></div></section>
-  <ContactForm/>
-  </main><Footer/></>}
+  return (
+    <>
+      <Navbar />
+      <main id="main-content">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([personJsonLd, websiteJsonLd, kwechiriJsonLd, buzzbuntuJsonLd]).replace(/</g, "\\u003c"),
+          }}
+        />
+
+        <Hero />
+        <ExecutionSignal signal={githubSignal} />
+
+        <KwechiriFeature />
+
+        <section id="systems" className="section">
+          <div className="site-shell">
+            <div className="grid gap-6 lg:grid-cols-[1fr_.8fr] lg:items-end">
+              <div>
+                <p className="section-label">SYSTEMS / SELECTED PRODUCTION WORK</p>
+                <h2 className="section-title mt-5">Built for operators, institutions and scale.</h2>
+              </div>
+              <p className="lead max-w-xl lg:justify-self-end">
+                Three representative platforms across public education, civic accountability and digital commerce, each running in production.
+              </p>
+            </div>
+
+            <div className="mt-10 space-y-4 sm:mt-14 sm:space-y-6">
+              {featured.map((system, index) => (
+                <article key={system.name} className="panel grid overflow-hidden lg:grid-cols-2">
+                  <a
+                    href={system.website!}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open the live ${system.name} system`}
+                    className={`group relative min-h-60 overflow-hidden border-b border-[#23384d] bg-[#0a1623] sm:min-h-72 lg:border-b-0 ${index % 2 ? "lg:order-2 lg:border-l" : "lg:border-r"}`}
+                  >
+                    <Image
+                      src={system.image!}
+                      alt={`${system.name} live homepage`}
+                      fill
+                      sizes="(max-width:1024px) 100vw,50vw"
+                      className="object-cover object-top transition duration-500 group-hover:scale-[1.015]"
+                    />
+                    <span className="absolute left-4 top-4 rounded-md border border-[#23384d] bg-[#07111f]/90 px-3 py-2 font-mono text-[.62rem] uppercase tracking-[.15em] text-[#16c7d9] sm:left-5 sm:top-5">
+                      SYS / {String(index + 1).padStart(3, "0")} · LIVE
+                    </span>
+                    <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#16c7d9] text-xl text-[#07111f]" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                  <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10 xl:p-12">
+                    <p className="section-label">{system.category}</p>
+                    <h3 className="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">{system.name}</h3>
+                    <p className="mt-4 max-w-xl text-sm leading-7 text-[#9eadba] sm:text-base">{system.description}</p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {system.capabilities.slice(0, 3).map((item) => (
+                        <span key={item} className="rounded-md border border-[#23384d] px-3 py-2 text-xs text-[#9eadba]">{item}</span>
+                      ))}
+                    </div>
+                    <a href={system.website!} target="_blank" rel="noreferrer" className="text-link mt-6 inline-flex min-h-11 w-fit items-center text-sm font-semibold">
+                      Visit {system.name} <span className="ml-2" aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-[#23384d] pt-5 sm:flex-row sm:items-center">
+              <p className="text-sm text-[#708293]">Additional live products span events, media, learning, food commerce and operational accountability.</p>
+              <a href="#evidence" className="text-link inline-flex min-h-11 items-center font-semibold">Explore all systems <span className="ml-2" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+
+        <OperatingPrinciples />
+
+        <section id="leadership" className="section">
+          <div className="site-shell grid gap-10 lg:grid-cols-[.78fr_1.22fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="section-label">LEADERSHIP / EXECUTIVE + TECHNICAL</p>
+              <h2 className="section-title mt-5">The decisions behind the delivery.</h2>
+              <p className="lead mt-6 max-w-xl">
+                I work at the boundary between enterprise strategy and hands-on system design, where technical decisions become operational outcomes.
+              </p>
+              <div className="mt-7 grid gap-2 text-sm text-[#9eadba] sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                <p className="panel p-3.5">Technology strategy</p>
+                <p className="panel p-3.5">Platform delivery</p>
+                <p className="panel p-3.5">Team operating systems</p>
+                <p className="panel p-3.5">Institutional change</p>
+              </div>
+            </div>
+
+            <div className="border-t border-[#23384d]">
+              {leadership.map((item) => (
+                <article key={item.role} className="grid gap-3 border-b border-[#23384d] py-6 sm:grid-cols-[8rem_1fr] sm:gap-6 sm:py-8">
+                  <p className="font-mono text-xs uppercase tracking-wider text-[#d7a84b]">{item.period}</p>
+                  <div>
+                    <h3 className="text-xl font-semibold sm:text-2xl">{item.role}</h3>
+                    <p className="mt-1 text-sm text-[#16c7d9]">{item.organization}</p>
+                    <p className="mt-3 max-w-2xl leading-7 text-[#9eadba]">{item.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="evidence" className="section border-y border-[#23384d] bg-[#0d1b2a]">
+          <div className="site-shell">
+            <div className="grid gap-6 lg:grid-cols-[1fr_.8fr] lg:items-end">
+              <div>
+                <p className="section-label">LIVE / PRODUCTION EVIDENCE</p>
+                <h2 className="section-title mt-5">Public systems, not concept screens.</h2>
+              </div>
+              <p className="lead max-w-xl lg:justify-self-end">
+                Every platform below links to a live public product across learning, commerce, events, food, media, community, civic technology and operations.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2">
+              {liveProjects.map((project, index) => (
+                <a
+                  key={project.name}
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit ${project.name} at ${project.domain}`}
+                  className={`panel panel-hover group overflow-hidden transition duration-300 hover:border-[#16c7d9] ${index === 0 ? "md:col-span-2" : ""}`}
+                >
+                  <article>
+                    <div className={`relative aspect-[16/10] overflow-hidden border-b border-[#23384d] bg-white ${index === 0 ? "md:aspect-[16/7]" : ""}`}>
+                      <Image
+                        src={project.image}
+                        alt={`${project.name} live homepage preview`}
+                        fill
+                        sizes={index === 0 ? "(max-width:768px) 100vw,85vw" : "(max-width:768px) 100vw,45vw"}
+                        className="object-cover object-top transition duration-500 group-hover:scale-[1.015]"
+                      />
+                    </div>
+                    <div className="p-5 sm:p-7">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className="section-label">LIVE / {project.category}</p>
+                          <h3 className="mt-3 text-xl font-semibold sm:text-2xl">{project.name}</h3>
+                        </div>
+                        <span className="text-xl text-[#16c7d9]" aria-hidden="true">↗</span>
+                      </div>
+                      <p className="mt-4 max-w-2xl text-sm leading-7 text-[#9eadba]">{project.description}</p>
+                      <p className="mt-5 break-all font-mono text-[.66rem] tracking-wide text-[#16c7d9]">{project.domain}</p>
+                    </div>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="section">
+          <div className="site-shell grid gap-10 lg:grid-cols-[1fr_.72fr] lg:items-start">
+            <div>
+              <p className="section-label">ABOUT / OPERATING CONTEXT</p>
+              <h2 className="section-title mt-5">Engineering with institutional reality in view.</h2>
+              <div className="mt-7 max-w-3xl space-y-5 text-base leading-8 text-[#9eadba] sm:text-lg">
+                <p>
+                  Joseph Mmadubuike is a Nigerian technology leader and systems architect focused on practical digital infrastructure for African institutions, businesses and emerging markets.
+                </p>
+                <p>
+                  His work starts with the operational problem behind the interface: how people coordinate, how institutions maintain visibility, where accountability breaks down and what a dependable system must make easier.
+                </p>
+                <p>
+                  His practice spans product architecture, full-stack delivery, APIs, dashboards, access control and indigenous-language computing. Leadership experience keeps the work grounded in teams, incentives and long-term operability.
+                </p>
+              </div>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                <div className="panel p-5">
+                  <p className="section-label">FOCUS / SYSTEMS</p>
+                  <p className="mt-4 leading-7 text-[#9eadba]">Architecture, implementation and operational clarity.</p>
+                </div>
+                <div className="panel p-5">
+                  <p className="section-label">FOCUS / AFRICA</p>
+                  <p className="mt-4 leading-7 text-[#9eadba]">Infrastructure designed around real emerging-market conditions.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="panel mx-auto w-full max-w-[26rem] overflow-hidden self-start lg:mx-0 lg:justify-self-end">
+              <video
+                className="aspect-[9/16] w-full bg-[#07111f] object-cover"
+                controls
+                playsInline
+                preload="none"
+                poster="/images/joseph/josephmmadubuike.jpeg"
+                aria-label="Short portrait video featuring Joseph Mmadubuike"
+              >
+                <source src="/images/joseph/josephmmadubuike.mp4" type="video/mp4" />
+                Your browser does not support embedded video. <a href="/images/joseph/josephmmadubuike.mp4">Download the video</a>.
+              </video>
+              <div className="flex items-center justify-between gap-4 border-t border-[#23384d] px-5 py-4">
+                <p className="font-mono text-[.66rem] uppercase tracking-[.16em] text-[#9eadba]">JOSEPH / IN MOTION</p>
+                <span className="h-2 w-2 rounded-full bg-[#16c7d9]" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="philosophy" className="section relative overflow-hidden border-t border-[#23384d]">
+          <div className="absolute inset-0 grid-bg" />
+          <div className="site-shell relative">
+            <p className="section-label">WORKING PRINCIPLE / 001</p>
+            <p className="mt-7 max-w-6xl text-[clamp(2rem,5.7vw,5rem)] font-semibold leading-[1.04] tracking-[-.05em]">
+              Software becomes more valuable when it stops being merely software <span className="text-[#9eadba]">and becomes infrastructure people depend on.</span>
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link href="/kwechiri" className="btn btn-secondary">See the flagship release <span aria-hidden="true">→</span></Link>
+              <p className="font-mono text-[.66rem] uppercase tracking-[.15em] text-[#708293]">Systems / Language / Delivery</p>
+            </div>
+          </div>
+        </section>
+
+        <ContactForm />
+      </main>
+      <Footer />
+    </>
+  );
+}

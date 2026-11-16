@@ -3,8 +3,9 @@ import { profile } from "@/data/profile";
 import Brand from "@/components/Brand";
 
 const quickLinks=[
-  { label: "Systems", href: "/#systems" },
   { label: "Kwechiri", href: "/kwechiri" },
+  { label: "Systems", href: "/#systems" },
+  { label: "Activity", href: "/#activity" },
   { label: "Leadership", href: "/#leadership" },
   { label: "About", href: "/#about" },
 ];
@@ -24,6 +25,9 @@ export default function Footer(){
           <p className="mt-4 max-w-md leading-7 text-[#9eadba]">{profile.headline}</p>
           <p className="mt-5 text-sm font-semibold text-[#f4f7fa]">{profile.companyTitle}</p>
           <p className="mt-1 text-sm text-[#708293]">{profile.formerTitle}</p>
+          <a href="https://github.com/Jmmadubuike" target="_blank" rel="noreferrer" className="mt-5 inline-flex min-h-11 items-center font-mono text-[.65rem] uppercase tracking-[.15em] text-[#d7a84b] hover:text-white">
+            Public development activity <span className="ml-2" aria-hidden="true">↗</span>
+          </a>
         </div>
         <nav aria-label="Footer navigation">
           <p className={headingClass}>Explore</p>
