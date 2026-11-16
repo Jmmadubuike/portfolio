@@ -8,7 +8,7 @@ export const profile = {
   formerTitle: "Former Chief Technology Officer, Diaspora Digital Media",
   technicalAlias: "C!PHER",
   headline:
-    "Technology Executive. Systems Architect. Builder of African Digital Infrastructure.",
+    "Technology Executive. Systems Architect. Creator of Kwechiri.",
   location: {
     state: "Abia State",
     short: "Abia, NG",

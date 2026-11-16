@@ -1,6 +1,6 @@
-# Joseph Mmadubuike — Technology Builder
+# Joseph Mmadubuike — Creator of Kwechiri & Systems Architect
 
-Official portfolio for Joseph Mmadubuike: Nigerian technology builder, systems architect, and builder of African digital infrastructure. It also houses the public introduction and roadmap for Kwechiri, an Igbo-inspired programming language in active development.
+Official portfolio for Joseph Mmadubuike: technology builder, systems architect, and builder of African digital infrastructure. It houses the public introduction and release links for Kwechiri, an Igbo-first programming language published on npm and supported in VS Code.
 
 ## Stack
 

@@ -17,7 +17,9 @@ export const liveProjects=[
 ];
 
 export const kwechiri={
-  name:"Kwechiri",status:"Active development",description:"An Igbo-inspired programming language exploring how African language, identity and computing can meet at the language-design level.",note:"Kwechiri is an experimental project in active development. Its language design and implementation may change as the project matures.",layers:[
-    {name:"Language design",status:"In development"},{name:"Compiler",status:"In development"},{name:"Developer tooling",status:"Planned"},{name:"Documentation",status:"In development"},
-  ],roadmap:[{name:"Kwechiri language",status:"Active development"},{name:"Developer tooling",status:"Planned"},{name:"Kwechiri ecosystem",status:"Future vision"},{name:"Kwechiri Browser",status:"Future project"}],
+  name:"Kwechiri",version:"1.1.0",status:"Available on npm and in VS Code",description:"Kwechiri is an Igbo-first programming language built around Unicode Igbo identifiers, Igbo keywords and an explicit compiler path to executable JavaScript.",note:"Kwechiri 1.1.0 is publicly available. The CLI is published on npm, and the VS Code extension provides syntax highlighting and diagnostics for .kwe files.",links:{
+    website:"https://kwechiri.dev",npm:"https://www.npmjs.com/package/kwechiri",vscode:"https://marketplace.visualstudio.com/items?itemName=kwechiri.kwechiri-language",source:"https://github.com/Jmmadubuike/kwechiri-programming-language",
+  },layers:[
+    {name:"Compiler & CLI",status:"1.1.0 on npm"},{name:"VS Code support",status:"Available"},{name:"Language foundations",status:"Released"},{name:"Documentation",status:"In development"},
+  ],roadmap:[{name:"Kwechiri 1.1.0",status:"Released"},{name:"npm CLI + VS Code",status:"Available"},{name:"Documentation & ecosystem",status:"In development"},{name:"Kwechiri Browser",status:"Future project"}],
 };
