@@ -1,6 +1,5 @@
 export const profile = {
   name: "Joseph Mmadubuike",
-  displayName: "J. Mmadubuike",
   domain: "https://www.josephmmadubuike.com",
   title:
     "Technology Executive, Systems Architect, Digital Strategist, and Builder of Infrastructure-Grade Digital Platforms",
@@ -12,37 +11,31 @@ export const profile = {
   location: {
     state: "Abia State",
     short: "Abia, NG",
-    country: "Nigeria",
     countryCode: "NG",
     display: "Abia State, Nigeria",
   },
-  summary: `Joseph Mmadubuike builds scalable digital platforms across education, commerce, governance, media, community, logistics, healthcare, hospitality, transport, and entertainment technology, with a focus on practical systems for emerging markets.
-
-Previously General Manager of Five Stars Digital Media and Chief Technology Officer of Diaspora Digital Media, he works at the intersection of software infrastructure, digital strategy, operational intelligence, and African institutional transformation. Where technically relevant, he also works under the cybersecurity-oriented alias C!PHER.`,
-  interests: [
-    "Building civic, business, and institutional technology systems that solve operational problems",
-    "Designing scalable platforms, APIs, and workflows for governance, commerce, publishing, and visibility",
-    "Using digital relevance strategy to help organizations become discoverable, trusted, and useful online",
-    "Leading practical execution across software engineering, systems architecture, and media-enabled delivery",
-  ],
   contact: {
     publicEmail: "jmmadubuike@gmail.com",
     publicPhone: "+234 803 66 82 403",
-    twitter: "@jmmadubuike",
-    domain: "https://www.josephmmadubuike.com",
-    alternateEmail: "josephmmadubuike@gmail.com",
-    alternatePhoneNigeria: "+234 811 63 53 338",
   },
   socialLinks: [
     {
       platform: "x",
       label: "X",
-      url: "https://www.x.com/jmmadubuike",
+      handle: "@jmmadubuike",
+      url: "https://x.com/jmmadubuike",
     },
     {
       platform: "instagram",
       label: "Instagram",
+      handle: "@jmmadubuike",
       url: "https://www.instagram.com/jmmadubuike",
+    },
+    {
+      platform: "tiktok",
+      label: "TikTok",
+      handle: "@jmmadubuike",
+      url: "https://www.tiktok.com/@jmmadubuike",
     },
     {
       platform: "linkedin",

@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import Brand from "@/components/Brand";
 
 const links = [
-  { label: "Kwechiri", href: "/kwechiri" },
   { label: "Work", href: "/work" },
-  { label: "Activity", href: "/#activity" },
+  { label: "Kwechiri", href: "/kwechiri" },
+  { label: "Services", href: "/services" },
   { label: "Leadership", href: "/#leadership" },
   { label: "About", href: "/#about" },
 ];

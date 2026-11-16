@@ -1,5 +1,6 @@
 import type { GitHubSignal } from "@/data/github";
-import { kwechiri, liveProjects } from "@/data/site";
+import { kwechiri } from "@/data/site";
+import { workProjects } from "@/data/work";
 
 type ExecutionSignalProps = {
   signal: GitHubSignal;
@@ -14,7 +15,7 @@ const syncFormat = new Intl.DateTimeFormat("en-NG", {
 export default function ExecutionSignal({ signal }: ExecutionSignalProps) {
   const proofs = [
     { value: numberFormat.format(signal.publicRepos), label: "Public repositories" },
-    { value: `${liveProjects.length}`, label: "Live production systems" },
+    { value: `${workProjects.length}`, label: "Live production systems" },
     { value: kwechiri.version, label: "Kwechiri release" },
   ];
 
