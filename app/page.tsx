@@ -7,14 +7,17 @@ import ExecutionSignal from "@/components/ExecutionSignal";
 import KwechiriFeature from "@/components/KwechiriFeature";
 import OperatingPrinciples from "@/components/OperatingPrinciples";
 import ContactForm from "@/components/ContactForm";
+import WorkCard from "@/components/WorkCard";
 import { getGitHubSignal } from "@/data/github";
-import { systems } from "@/data/systems";
 import { profile } from "@/data/profile";
-import { kwechiri, leadership, liveProjects } from "@/data/site";
+import { kwechiri, leadership } from "@/data/site";
+import { workProjects } from "@/data/work";
 
 export const revalidate = 21600;
 
-const featured = systems.filter((system) => ["SchoolGrid", "VoteGuard", "SanJoseMart"].includes(system.name));
+const featuredSlugs = ["school-grid", "vote-guard-africa", "sanjose-mart"];
+const featured = workProjects.filter((project) => featuredSlugs.includes(project.slug));
+const additionalWork = workProjects.filter((project) => !featuredSlugs.includes(project.slug));
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -107,18 +110,16 @@ export default async function Page() {
             </div>
 
             <div className="mt-10 space-y-4 sm:mt-14 sm:space-y-6">
-              {featured.map((system, index) => (
-                <article key={system.name} className="panel grid overflow-hidden lg:grid-cols-2">
-                  <a
-                    href={system.website!}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open the live ${system.name} system`}
+              {featured.map((project, index) => (
+                <article key={project.slug} className="panel grid overflow-hidden lg:grid-cols-2">
+                  <Link
+                    href={`/work/${project.slug}`}
+                    aria-label={`View the ${project.name} system brief`}
                     className={`group relative min-h-60 overflow-hidden border-b border-[#23384d] bg-[#0a1623] sm:min-h-72 lg:border-b-0 ${index % 2 ? "lg:order-2 lg:border-l" : "lg:border-r"}`}
                   >
                     <Image
-                      src={system.image!}
-                      alt={`${system.name} live homepage`}
+                      src={project.image}
+                      alt={`${project.name} live homepage`}
                       fill
                       sizes="(max-width:1024px) 100vw,50vw"
                       className="object-cover object-top transition duration-500 group-hover:scale-[1.015]"
@@ -127,21 +128,28 @@ export default async function Page() {
                       SYS / {String(index + 1).padStart(3, "0")} · LIVE
                     </span>
                     <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#16c7d9] text-xl text-[#07111f]" aria-hidden="true">
-                      ↗
+                      →
                     </span>
-                  </a>
+                  </Link>
                   <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10 xl:p-12">
-                    <p className="section-label">{system.category}</p>
-                    <h3 className="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">{system.name}</h3>
-                    <p className="mt-4 max-w-xl text-sm leading-7 text-[#9eadba] sm:text-base">{system.description}</p>
+                    <p className="section-label">{project.category}</p>
+                    <h3 className="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">
+                      <Link href={`/work/${project.slug}`} className="hover:text-white">{project.name}</Link>
+                    </h3>
+                    <p className="mt-4 max-w-xl text-sm leading-7 text-[#9eadba] sm:text-base">{project.description}</p>
                     <div className="mt-6 flex flex-wrap gap-2">
-                      {system.capabilities.slice(0, 3).map((item) => (
+                      {project.capabilities.slice(0, 3).map((item) => (
                         <span key={item} className="rounded-md border border-[#23384d] px-3 py-2 text-xs text-[#9eadba]">{item}</span>
                       ))}
                     </div>
-                    <a href={system.website!} target="_blank" rel="noreferrer" className="text-link mt-6 inline-flex min-h-11 w-fit items-center text-sm font-semibold">
-                      Visit {system.name} <span className="ml-2" aria-hidden="true">↗</span>
-                    </a>
+                    <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+                      <Link href={`/work/${project.slug}`} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#16c7d9] hover:text-white">
+                        View system brief <span className="ml-2" aria-hidden="true">→</span>
+                      </Link>
+                      <a href={project.url} target="_blank" rel="noreferrer" className="text-link inline-flex min-h-11 items-center text-sm font-semibold">
+                        Visit live <span className="ml-2" aria-hidden="true">↗</span>
+                      </a>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -149,7 +157,7 @@ export default async function Page() {
 
             <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-[#23384d] pt-5 sm:flex-row sm:items-center">
               <p className="text-sm text-[#708293]">Additional live products span events, media, learning, food commerce and operational accountability.</p>
-              <a href="#evidence" className="text-link inline-flex min-h-11 items-center font-semibold">Explore all systems <span className="ml-2" aria-hidden="true">→</span></a>
+              <Link href="/work" className="text-link inline-flex min-h-11 items-center font-semibold">Explore the complete work index <span className="ml-2" aria-hidden="true">→</span></Link>
             </div>
           </div>
         </section>
@@ -191,48 +199,19 @@ export default async function Page() {
           <div className="site-shell">
             <div className="grid gap-6 lg:grid-cols-[1fr_.8fr] lg:items-end">
               <div>
-                <p className="section-label">LIVE / PRODUCTION EVIDENCE</p>
-                <h2 className="section-title mt-5">Public systems, not concept screens.</h2>
+                <p className="section-label">MORE / PUBLIC PRODUCTS</p>
+                <h2 className="section-title mt-5">The wider body of work.</h2>
               </div>
               <p className="lead max-w-xl lg:justify-self-end">
-                Every platform below links to a live public product across learning, commerce, events, food, media, community, civic technology and operations.
+                Explore the remaining public systems across media, learning, food commerce, events and operational accountability.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2">
-              {liveProjects.map((project, index) => (
-                <a
-                  key={project.name}
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Visit ${project.name} at ${project.domain}`}
-                  className={`panel panel-hover group overflow-hidden transition duration-300 hover:border-[#16c7d9] ${index === 0 ? "md:col-span-2" : ""}`}
-                >
-                  <article>
-                    <div className={`relative aspect-[16/10] overflow-hidden border-b border-[#23384d] bg-white ${index === 0 ? "md:aspect-[16/7]" : ""}`}>
-                      <Image
-                        src={project.image}
-                        alt={`${project.name} live homepage preview`}
-                        fill
-                        sizes={index === 0 ? "(max-width:768px) 100vw,85vw" : "(max-width:768px) 100vw,45vw"}
-                        className="object-cover object-top transition duration-500 group-hover:scale-[1.015]"
-                      />
-                    </div>
-                    <div className="p-5 sm:p-7">
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <p className="section-label">LIVE / {project.category}</p>
-                          <h3 className="mt-3 text-xl font-semibold sm:text-2xl">{project.name}</h3>
-                        </div>
-                        <span className="text-xl text-[#16c7d9]" aria-hidden="true">↗</span>
-                      </div>
-                      <p className="mt-4 max-w-2xl text-sm leading-7 text-[#9eadba]">{project.description}</p>
-                      <p className="mt-5 break-all font-mono text-[.66rem] tracking-wide text-[#16c7d9]">{project.domain}</p>
-                    </div>
-                  </article>
-                </a>
-              ))}
+            <div className="mt-9 grid gap-4 sm:mt-12 md:grid-cols-2 xl:grid-cols-3">
+              {additionalWork.map((project) => <WorkCard key={project.slug} project={project} compact />)}
+            </div>
+            <div className="mt-6 border-t border-[#23384d] pt-5 text-right">
+              <Link href="/work" className="text-link inline-flex min-h-11 items-center font-semibold">Open the Work index <span className="ml-2" aria-hidden="true">→</span></Link>
             </div>
           </div>
         </section>

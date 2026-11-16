@@ -6,7 +6,7 @@ import Brand from "@/components/Brand";
 
 const links = [
   { label: "Kwechiri", href: "/kwechiri" },
-  { label: "Systems", href: "/#systems" },
+  { label: "Work", href: "/work" },
   { label: "Activity", href: "/#activity" },
   { label: "Leadership", href: "/#leadership" },
   { label: "About", href: "/#about" },

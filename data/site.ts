@@ -1,3 +1,5 @@
+import { workProjects } from "@/data/work";
+
 export const buildDomains=["Digital Public Infrastructure","Commerce Systems","Educational Technology","Developer Infrastructure","Media Platforms","Community & Culture Platforms","Operational Systems","Emerging Market Infrastructure"];
 export const leadership=[
   {period:"2025 — 2026",role:"General Manager",organization:"Five Stars Digital Media",description:"Led technology, media, product development, digital transformation and innovation strategy."},
@@ -5,16 +7,7 @@ export const leadership=[
   {period:"2016 — present",role:"Software Engineering & Architecture",organization:"Independent and contract work",description:"Designs and builds full-stack platforms, APIs, dashboards and operational tools for real institutions and markets."},
 ];
 
-export const liveProjects=[
-  {name:"BuzzBuntu",category:"Media & Community Platform",description:"A live platform for discovering and connecting with African people, stories, culture, enterprise and opportunities.",url:"https://www.buzzbuntu.com",domain:"buzzbuntu.com",image:"/images/projects/live/buzzbuntu.png"},
-  {name:"JM DevLab",category:"Technology Education",description:"A learning platform where people acquire practical ICT, digital productivity and software-development skills.",url:"https://devlab.josephmmadubuike.com",domain:"devlab.josephmmadubuike.com",image:"/images/projects/live/devlab.png"},
-  {name:"SanjoseMart",category:"E-commerce",description:"An e-commerce platform for discovering, comparing and buying technology products online.",url:"https://www.sanjosemart.com",domain:"sanjosemart.com",image:"/images/projects/live/sanjosemart.png"},
-  {name:"EventsTrybe",category:"Events & Ticketing",description:"An event discovery and booking platform connecting people with live culture, entertainment and trusted event access.",url:"https://www.eventstrybe.com",domain:"eventstrybe.com",image:"/images/projects/live/eventstrybe.png"},
-  {name:"ChopQuick",category:"Food Commerce",description:"An online food-ordering platform connecting customers with local restaurants, kitchens and quick delivery.",url:"https://www.chopquick.com",domain:"chopquick.com",image:"/images/projects/live/chopquick.png"},
-  {name:"SchoolGrid",category:"Government Education Infrastructure",description:"A school-supervision platform that helps government and education authorities monitor attendance, lessons, incidents and compliance.",url:"https://schoolgrid.sanjosedynamics.com",domain:"schoolgrid.sanjosedynamics.com",image:"/images/projects/live/schoolgrid.png"},
-  {name:"VoteGuard Africa",category:"Civic Technology",description:"An election-transparency platform for controlled result submission, verification, evidence traceability and accountable review.",url:"https://voteguard.sanjosemart.com",domain:"voteguard.sanjosemart.com",image:"/images/projects/live/voteguard.png"},
-  {name:"TaskProof",category:"Operational Systems",description:"A task delegation, assignment and accountability platform for tracking work, reports and supporting proof.",url:"https://taskproof.sanjosedynamics.com",domain:"taskproof.sanjosedynamics.com",image:"/images/projects/live/taskproof.png"},
-];
+export const liveProjects = workProjects;
 
 export const kwechiri={
   name:"Kwechiri",version:"1.2.0",status:"Available on npm and in VS Code",description:"Kwechiri is an Igbo-first programming language built around Unicode Igbo identifiers, Igbo keywords and an explicit compiler path to executable JavaScript.",note:"Kwechiri 1.2.0 adds multiline string literals to the compiler and npm CLI. VS Code extension 0.2.2 includes the updated compiler bundle with syntax highlighting and diagnostics for .kwe files.",links:{

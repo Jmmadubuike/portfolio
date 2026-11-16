@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
             <a href="#contact" className="btn btn-primary w-full sm:w-auto">Start a Conversation <span aria-hidden="true">↗</span></a>
             <Link href="/kwechiri" className="btn btn-secondary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
-            <a href="#systems" className="btn btn-secondary w-full sm:w-auto">See Production Systems</a>
+            <Link href="/work" className="btn btn-secondary w-full sm:w-auto">Explore Work</Link>
           </div>
         </div>
 

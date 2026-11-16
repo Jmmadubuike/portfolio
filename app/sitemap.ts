@@ -1,3 +1,17 @@
 import type { MetadataRoute } from "next";
-const siteUrl="https://www.josephmmadubuike.com";
-export default function sitemap():MetadataRoute.Sitemap{return [{url:siteUrl,changeFrequency:"monthly",priority:1},{url:`${siteUrl}/kwechiri`,changeFrequency:"monthly",priority:.9}]}
+import { workProjects } from "@/data/work";
+
+const siteUrl = "https://www.josephmmadubuike.com";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    { url: siteUrl, changeFrequency: "monthly", priority: 1 },
+    { url: `${siteUrl}/work`, changeFrequency: "monthly", priority: 0.95 },
+    { url: `${siteUrl}/kwechiri`, changeFrequency: "monthly", priority: 0.9 },
+    ...workProjects.map((project) => ({
+      url: `${siteUrl}/work/${project.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
+}
