@@ -25,7 +25,9 @@ export default function ContactForm({ context = "General website enquiry", theme
       "",
       `Page context: ${context}`,
     ];
-    window.open(`https://wa.me/2348036682403?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener,noreferrer");
+    const subject = `Website enquiry — ${value("enquiry")}`;
+    const body = lines.join("\n");
+    window.location.href = `mailto:${profile.contact.publicEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   const gold = theme === "gold";
@@ -35,13 +37,13 @@ export default function ContactForm({ context = "General website enquiry", theme
     <section id="contact" className={`section ${gold ? "bg-[#d7a84b] text-[#07111f]" : "bg-[#07111f] text-white"}`}>
       <div className="site-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
         <div>
-          <p className={`section-label ${gold ? "!text-[#07111f]" : ""}`}>CONTACT / WHATSAPP</p>
+          <p className={`section-label ${gold ? "!text-[#07111f]" : ""}`}>CONTACT / EMAIL</p>
           <h2 className="section-title mt-5">Tell me what you want to build.</h2>
-          <p className={`mt-7 max-w-xl text-lg leading-8 ${gold ? "text-[#243548]" : "text-[#9eadba]"}`}>Share the essential details here. When you continue, WhatsApp will open with one organized message ready for you to review and send from your account.</p>
+          <p className={`mt-7 max-w-xl text-lg leading-8 ${gold ? "text-[#243548]" : "text-[#9eadba]"}`}>Share the essential details here. When you continue, your email app will open with one organized draft addressed to {profile.contact.publicEmail}, ready for you to review and send.</p>
           <p className={`mt-5 max-w-xl font-semibold leading-7 ${gold ? "text-[#243548]" : "text-[#dbe5ec]"}`}>Available for technology consulting, partnerships, speaking, and product collaborations.</p>
           <div className={`mt-8 border-l-2 pl-5 text-sm leading-7 ${gold ? "border-[#07111f] text-[#243548]" : "border-[#16c7d9] text-[#9eadba]"}`}>
             <p>Your information is not submitted to or stored by this website.</p>
-            <p>WhatsApp: {profile.contact.publicPhone}</p>
+            <p>WhatsApp: <a href="https://wa.me/2348036682403" target="_blank" rel="noreferrer" className="underline decoration-current/40 underline-offset-4 hover:decoration-current">{profile.contact.publicPhone}</a></p>
             <p>Email: <a href={`mailto:${profile.contact.publicEmail}`} className="underline decoration-current/40 underline-offset-4 hover:decoration-current">{profile.contact.publicEmail}</a></p>
           </div>
         </div>
@@ -56,8 +58,8 @@ export default function ContactForm({ context = "General website enquiry", theme
           </div>
           <label className="mt-5 block text-sm font-semibold">Project details or message<span aria-hidden="true"> *</span><textarea className={`${fieldClass} mt-2 min-h-36 resize-y`} name="message" required placeholder="Describe what you need, the problem to solve and any useful context." /></label>
           <button type="submit" className={`btn mt-6 w-full sm:w-auto ${gold ? "border-[#07111f] bg-[#07111f] !text-white" : "btn-primary"}`}>
-            <svg viewBox="0 0 32 32" className="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M16.04 3A12.86 12.86 0 0 0 5.2 22.78L3.5 29l6.37-1.67A12.98 12.98 0 1 0 16.04 3Zm0 23.76c-2.1 0-4.15-.57-5.93-1.65l-.43-.25-3.78.99 1.01-3.68-.28-.45a10.68 10.68 0 1 1 9.41 5.04Zm5.86-7.98c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.82 1.05-1.01 1.26-.19.22-.37.24-.69.08-.32-.16-1.36-.5-2.58-1.59a9.67 9.67 0 0 1-1.79-2.23c-.19-.32-.02-.49.14-.65.15-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.22.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.1-1.12 2.67 0 1.58 1.15 3.1 1.31 3.31.16.21 2.26 3.45 5.47 4.84.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.61-.09 1.9-.78 2.17-1.53.27-.76.27-1.42.19-1.55-.08-.14-.29-.22-.61-.38Z" /></svg>
-            Continue on WhatsApp <span aria-hidden="true">↗</span>
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
+            Continue by email <span aria-hidden="true">↗</span>
           </button>
         </form>
       </div>
