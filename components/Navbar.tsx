@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Brand from "@/components/Brand";
+import { profile } from "@/data/profile";
 
 const links = [
   { label: "Home", href: "/" },
@@ -94,6 +95,13 @@ export default function Navbar() {
             <Brand />
           </Link>
           <div className="hidden items-center gap-7 lg:flex">
+            <a
+              href={profile.cv.path}
+              download={profile.cv.filename}
+              className="inline-flex min-h-10 items-center rounded-md border border-[#d7a84b]/50 px-3.5 py-2 text-sm font-semibold text-[#d7a84b] transition-colors hover:border-[#d7a84b] hover:bg-[#d7a84b]/10 hover:text-white"
+            >
+              Download CV
+            </a>
             {links.map((link) => (
               <Link key={link.label} href={link.href} className="text-sm text-[#9eadba] transition-colors hover:text-white">
                 {link.label}
@@ -147,6 +155,14 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href={profile.cv.path}
+                download={profile.cv.filename}
+                onClick={() => setOpen(false)}
+                className="mt-4 flex min-h-14 items-center justify-center rounded-lg border border-[#d7a84b]/50 bg-[#d7a84b]/10 px-4 text-xl font-semibold text-[#d7a84b] transition-colors hover:border-[#d7a84b] hover:text-white"
+              >
+                Download CV
+              </a>
             </div>
           </div>
         </div>

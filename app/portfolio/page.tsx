@@ -3,19 +3,20 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WorkExplorer from "@/components/WorkExplorer";
+import { profile } from "@/data/profile";
 import { workProjects } from "@/data/work";
 
 export const metadata: Metadata = {
   title: "Portfolio — Production Systems",
   description:
-    "Selected production systems by Joseph Mmadubuike across public infrastructure, civic technology, commerce, media, education and operations.",
+    "Selected production systems by Joseph Mmadubuike across transport, public infrastructure, civic technology, commerce, media, education and operations.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
     type: "website",
     url: "/portfolio",
     title: "Portfolio — Production Systems | Joseph Mmadubuike",
     description:
-      "Explore verified public systems across public infrastructure, commerce, media, education and operational technology.",
+      "Explore verified public systems across transport, public infrastructure, commerce, media, education and operational technology.",
   },
 };
 
@@ -52,8 +53,15 @@ export default function WorkPage() {
                 <p className="section-label">PORTFOLIO / PRODUCTION SYSTEMS</p>
                 <h1 className="display mt-5 max-w-[14ch]">Systems built for consequence.</h1>
                 <p className="lead mt-6 max-w-2xl">
-                  Public platforms spanning institutional oversight, civic accountability, commerce, media, education and operational control.
+                  Public platforms spanning transport, institutional oversight, civic accountability, commerce, media, education and operational control.
                 </p>
+                <a
+                  href={profile.cv.path}
+                  download={profile.cv.filename}
+                  className="btn btn-secondary mt-6 w-full sm:w-auto"
+                >
+                  Download CV <span aria-hidden="true">↓</span>
+                </a>
               </div>
               <div className="grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-[#23384d] bg-[#23384d]">
                 <div className="bg-[#0d1b2a] p-4 sm:p-5">
@@ -61,7 +69,7 @@ export default function WorkPage() {
                   <p className="mt-2 text-xs leading-5 text-[#9eadba]">Live systems</p>
                 </div>
                 <div className="bg-[#0d1b2a] p-4 sm:p-5">
-                  <p className="text-3xl font-semibold tracking-[-.05em] sm:text-4xl">4</p>
+                  <p className="text-3xl font-semibold tracking-[-.05em] sm:text-4xl">5</p>
                   <p className="mt-2 text-xs leading-5 text-[#9eadba]">Operating families</p>
                 </div>
                 <div className="bg-[#0d1b2a] p-4 sm:p-5">

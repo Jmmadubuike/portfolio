@@ -30,6 +30,11 @@ export default function Footer() {
               <li><Link href="/about" className={linkClass}>About</Link></li>
               <li><Link href="/portfolio" className={linkClass}>Portfolio</Link></li>
               <li><Link href="/contact" className={linkClass}>Contact</Link></li>
+              <li>
+                <a href={profile.cv.path} download={profile.cv.filename} className={linkClass}>
+                  Download CV
+                </a>
+              </li>
             </ul>
           </nav>
 

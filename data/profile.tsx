@@ -18,6 +18,10 @@ export const profile = {
     publicEmail: "jmmadubuike@gmail.com",
     publicPhone: "+234 803 66 82 403",
   },
+  cv: {
+    path: "/downloads/Joseph-Mmadubuike-CV-CTO.pdf",
+    filename: "Joseph-Mmadubuike-CV-CTO.pdf",
+  },
   socialLinks: [
     {
       platform: "x",

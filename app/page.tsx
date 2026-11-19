@@ -13,7 +13,7 @@ import { workProjects } from "@/data/work";
 
 export const revalidate = 21600;
 
-const featuredSlugs = ["school-grid", "vote-guard-africa", "sanjose-mart"];
+const featuredSlugs = ["gaabia", "school-grid", "vote-guard-africa"];
 const featured = workProjects.filter((project) => featuredSlugs.includes(project.slug));
 
 const personJsonLd = {
@@ -88,7 +88,7 @@ export default async function Page() {
                 <h2 className="section-title mt-5">Production systems, with the full brief included.</h2>
               </div>
               <p className="lead max-w-xl lg:justify-self-end">
-                Three representative platforms. Open any system brief for its operating context, capability scope and live product.
+                Transport, public oversight and civic accountability. Open any system brief for its operating context, capability scope and live product.
               </p>
             </div>
 
@@ -97,7 +97,7 @@ export default async function Page() {
             </div>
 
             <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-[#23384d] pt-5 sm:flex-row sm:items-center">
-              <p className="text-sm text-[#708293]">The complete directory spans eight live systems across four operating families.</p>
+              <p className="text-sm text-[#708293]">The complete directory spans nine live systems across five operating families.</p>
               <Link href="/portfolio" className="text-link inline-flex min-h-11 items-center font-semibold">Explore the full portfolio <span className="ml-2" aria-hidden="true">→</span></Link>
             </div>
           </div>

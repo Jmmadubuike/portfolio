@@ -1,4 +1,9 @@
-export type WorkFamily = "Public & civic" | "Commerce" | "Media & community" | "Education & operations";
+export type WorkFamily =
+  | "Public & civic"
+  | "Commerce"
+  | "Media & community"
+  | "Education & operations"
+  | "Transport & mobility";
 
 export type WorkProject = {
   slug: string;
@@ -14,6 +19,29 @@ export type WorkProject = {
 };
 
 export const workProjects: WorkProject[] = [
+  {
+    slug: "gaabia",
+    name: "GaaBia",
+    category: "Passenger Transport Infrastructure",
+    family: "Transport & mobility",
+    description:
+      "A live passenger transport platform coordinating verified drivers, scheduled routes, seat selection, transparent fares, payments and trip updates.",
+    context:
+      "Built for Umuahia and Abia State, GaaBia connects rider booking, vehicle capacity, driver approval, fare calculation, payment, live trip status and earnings records in one operating system.",
+    capabilities: [
+      "Private and shared ride booking",
+      "Seat selection and capacity control",
+      "Transparent fare calculation",
+      "Wallet and Paystack payments",
+      "Verified driver and vehicle approval",
+      "Live trip status updates",
+      "Two-way rider and driver ratings",
+      "Driver earnings ledger",
+    ],
+    url: "https://gaabia.buzzbuntu.com",
+    domain: "gaabia.buzzbuntu.com",
+    image: "/images/projects/live/gaabia.png",
+  },
   {
     slug: "school-grid",
     name: "SchoolGrid",
@@ -190,6 +218,7 @@ export const workFamilies: Array<"All" | WorkFamily> = [
   "Commerce",
   "Media & community",
   "Education & operations",
+  "Transport & mobility",
 ];
 
 export function getWorkProject(slug: string) {

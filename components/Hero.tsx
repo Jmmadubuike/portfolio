@@ -33,6 +33,9 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+            <a href={profile.cv.path} download={profile.cv.filename} className="btn btn-secondary w-full sm:w-auto">
+              Download CV <span aria-hidden="true">↓</span>
+            </a>
             <Link href="/contact" className="btn btn-primary w-full sm:w-auto">Start a Conversation <span aria-hidden="true">↗</span></Link>
             <Link href="/portfolio/kwechiri" className="btn btn-secondary w-full sm:w-auto">Explore Kwechiri <span aria-hidden="true">→</span></Link>
             <Link href="/portfolio" className="btn btn-secondary w-full sm:w-auto">Explore Portfolio</Link>
